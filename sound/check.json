@@ -1,0 +1,55 @@
+{
+ "mix": "/home/putera/animation/my-project/sound/mix.wav",
+ "pass": true,
+ "checks": [
+  {
+   "check": "loudness",
+   "pass": true,
+   "value": "-14.3 LUFS",
+   "target": "-14 \u00b11 LUFS (youtube)",
+   "note": ""
+  },
+  {
+   "check": "true peak",
+   "pass": true,
+   "value": "-1.5 dBTP",
+   "target": "<= -1.0 dBTP",
+   "note": ""
+  },
+  {
+   "check": "length",
+   "pass": true,
+   "value": "150.000 s",
+   "target": "150.0 s \u00b11 frame",
+   "note": ""
+  },
+  {
+   "check": "voice above music",
+   "pass": true,
+   "value": "20.4 dB in 300 Hz-4 kHz (worst line 0.00-111.08s)",
+   "target": ">= 14.0 dB during every line (WCAG AAA asks 20)",
+   "note": ""
+  },
+  {
+   "check": "sfx on their moments",
+   "pass": true,
+   "value": "12/12 within 1 frame",
+   "target": "<= 33 ms",
+   "note": ""
+  },
+  {
+   "check": "no dead air",
+   "pass": true,
+   "value": "0 unplanned gaps under -60 dBFS",
+   "target": "0 (room tone under everything)",
+   "note": ""
+  },
+  {
+   "check": "mono safe",
+   "pass": true,
+   "value": "mono is 3.8 dB quieter",
+   "target": "<= 6.5 dB",
+   "note": "3 dB = same in both speakers, 6 dB = fully wide, more = phase cancelling: check stereo widening"
+  }
+ ]
+}
