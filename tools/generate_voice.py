@@ -35,6 +35,9 @@ async def generate():
 
 def main():
     audio, words = asyncio.run(generate())
+    RAW.parent.mkdir(parents=True, exist_ok=True)
+    WAV.parent.mkdir(parents=True, exist_ok=True)
+    META.parent.mkdir(parents=True, exist_ok=True)
     RAW.write_bytes(audio)
     PUBLIC_VOICE.write_bytes(audio)
     WORDS.write_text(json.dumps(words, indent=2) + "\n")

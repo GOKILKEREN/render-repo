@@ -102,6 +102,8 @@ def make_scene_starts(anchors, duration):
 
 
 def main():
+    for path in (SFX_LIB, SFX_OUT, MUSIC_OUT.parent, VOICE_META.parent, TIMING.parent, CUES.parent, MIX_WAV.parent, MIX_MP3.parent):
+        path.mkdir(parents=True, exist_ok=True)
     meta = json.loads(VOICE_META.read_text())
     words = json.loads(WORDS_FILE.read_text())
     voice_duration = float(meta["duration"])

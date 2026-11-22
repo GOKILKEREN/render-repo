@@ -39,6 +39,9 @@ jobs:
       - name: Install Python dependencies
         run: python3 -m pip install --break-system-packages edge-tts numpy scipy opencv-python-headless pillow
 
+      - name: Prepare generated asset folders
+        run: mkdir -p public/audio sound/vo sound/music sound/sfx sound/sfx_lib src/data
+
       - name: Generate voice in cloud
         run: python3 tools/generate_voice.py
 
