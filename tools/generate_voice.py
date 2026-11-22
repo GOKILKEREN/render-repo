@@ -1,16 +1,14 @@
-import base64
+import asyncio
 import json
-import os
-import re
 import subprocess
-import urllib.request
-import wave
 from pathlib import Path
 
+import edge_tts
+
 ROOT = Path(__file__).resolve().parents[1]
-VOICE_ID = os.environ.get("ELEVENLABS_VOICE_ID", "TX3LPaxmHKxFdv7VOQHJ")
-MODEL = os.environ.get("ELEVENLABS_MODEL", "eleven_multilingual_v2")
-API_KEY = os.environ.get("ELEVENLABS_API_KEY")
+VOICE = "en-US-GuyNeural"
+RATE = "+0%"
+PITCH = "+0Hz"
 TEXT = (ROOT / "content/voiceover.txt").read_text().strip()
 RAW = ROOT / "public/audio/voice_raw.mp3"
 WAV = ROOT / "sound/vo/voice.wav"
@@ -19,55 +17,26 @@ META = ROOT / "sound/vo/voice_meta.json"
 PUBLIC_VOICE = ROOT / "public/audio/voice.mp3"
 
 
-def word_timings(alignment):
-    chars = alignment["characters"]
-    starts = alignment["character_start_times_seconds"]
-    ends = alignment["character_end_times_seconds"]
-    result = []
-    current = ""
-    start = 0.0
-    end = 0.0
-    for ch, s, e in zip(chars, starts, ends):
-        if re.match(r"[\w']", ch):
-            if not current:
-                start = s
-            current += ch
-            end = e
-        elif current:
-            result.append({"w": current, "s": round(start, 4), "e": round(end, 4)})
-            current = ""
-    if current:
-        result.append({"w": current, "s": round(start, 4), "e": round(end, 4)})
-    return result
+async def generate():
+    audio = bytearray()
+    words = []
+    communicate = edge_tts.Communicate(TEXT, VOICE, rate=RATE, pitch=PITCH)
+    async for chunk in communicate.stream():
+        kind = chunk.get("type")
+        if kind == "audio":
+            audio.extend(chunk["data"])
+        elif kind == "WordBoundary":
+            data = chunk["data"]
+            start = int(data["offset"]) / 10_000_000
+            end = (int(data["offset"]) + int(data["duration"])) / 10_000_000
+            words.append({"w": data["text"], "s": round(start, 4), "e": round(end, 4)})
+    return audio, words
 
 
 def main():
-    if not API_KEY:
-        raise SystemExit("ELEVENLABS_API_KEY is required")
-    url = f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}/with-timestamps?output_format=mp3_44100_128"
-    body = json.dumps({
-        "text": TEXT,
-        "model_id": MODEL,
-        "voice_settings": {
-            "stability": 0.4,
-            "similarity_boost": 0.8,
-            "style": 0.35,
-            "use_speaker_boost": True,
-            "speed": 1.0,
-        },
-    }).encode()
-    request = urllib.request.Request(url, data=body, headers={
-        "xi-api-key": API_KEY,
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-    })
-    with urllib.request.urlopen(request, timeout=300) as response:
-        payload = json.loads(response.read())
-        credits = response.headers.get("elevenlabs-credits-used")
-
-    RAW.write_bytes(base64.b64decode(payload["audio_base64"]))
-    PUBLIC_VOICE.write_bytes(RAW.read_bytes())
-    words = word_timings(payload["alignment"])
+    audio, words = asyncio.run(generate())
+    RAW.write_bytes(audio)
+    PUBLIC_VOICE.write_bytes(audio)
     WORDS.write_text(json.dumps(words, indent=2) + "\n")
 
     subprocess.run([
@@ -75,18 +44,20 @@ def main():
         "-ac", "1", "-ar", "48000", str(WAV),
     ], check=True)
 
-    with wave.open(str(WAV), "rb") as wf:
-        duration = round(wf.getnframes() / wf.getframerate(), 3)
+    duration = float(subprocess.check_output([
+        "ffprobe", "-v", "error", "-show_entries", "format=duration",
+        "-of", "csv=p=0", str(RAW),
+    ], text=True).strip())
 
     META.write_text(json.dumps({
-        "voice_id": VOICE_ID,
-        "model": MODEL,
+        "voice": VOICE,
+        "rate": RATE,
+        "pitch": PITCH,
         "characters": len(TEXT),
-        "duration": duration,
-        "credits": credits,
+        "duration": round(duration, 3),
         "words": len(words),
     }, indent=2) + "\n")
-    print(json.dumps({"duration": duration, "words": len(words), "credits": credits}))
+    print(json.dumps({"voice": VOICE, "duration": round(duration, 3), "words": len(words)}))
 
 
 if __name__ == "__main__":
