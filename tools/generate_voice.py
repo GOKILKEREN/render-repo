@@ -1,5 +1,6 @@
 import asyncio
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -20,16 +21,15 @@ PUBLIC_VOICE = ROOT / "public/audio/voice.mp3"
 async def generate():
     audio = bytearray()
     words = []
-    communicate = edge_tts.Communicate(TEXT, VOICE, rate=RATE, pitch=PITCH)
+    communicate = edge_tts.Communicate(TEXT, VOICE, rate=RATE, pitch=PITCH, boundary="WordBoundary")
     async for chunk in communicate.stream():
         kind = chunk.get("type")
         if kind == "audio":
             audio.extend(chunk["data"])
         elif kind == "WordBoundary":
-            data = chunk["data"]
-            start = int(data["offset"]) / 10_000_000
-            end = (int(data["offset"]) + int(data["duration"])) / 10_000_000
-            words.append({"w": data["text"], "s": round(start, 4), "e": round(end, 4)})
+            start = int(chunk["offset"]) / 10_000_000
+            end = (int(chunk["offset"]) + int(chunk["duration"])) / 10_000_000
+            words.append({"w": chunk["text"], "s": round(start, 4), "e": round(end, 4)})
     return audio, words
 
 
@@ -40,7 +40,6 @@ def main():
     META.parent.mkdir(parents=True, exist_ok=True)
     RAW.write_bytes(audio)
     PUBLIC_VOICE.write_bytes(audio)
-    WORDS.write_text(json.dumps(words, indent=2) + "\n")
 
     subprocess.run([
         "ffmpeg", "-loglevel", "error", "-y", "-i", str(RAW),
@@ -52,6 +51,15 @@ def main():
         "-of", "csv=p=0", str(RAW),
     ], text=True).strip())
 
+    if not words:
+        tokens = re.findall(r"[A-Za-z0-9']+", TEXT)
+        span = duration * 0.94 / max(len(tokens), 1)
+        words = [
+            {"w": token, "s": round(i * span, 4), "e": round((i + 1) * span, 4)}
+            for i, token in enumerate(tokens)
+        ]
+
+    WORDS.write_text(json.dumps(words, indent=2) + "\n")
     META.write_text(json.dumps({
         "voice": VOICE,
         "rate": RATE,
