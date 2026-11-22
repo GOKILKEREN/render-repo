@@ -1,0 +1,67 @@
+name: render-shorts
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-shorts-main
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg tesseract-ocr
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Install QA dependencies
+        run: python3 -m pip install --break-system-packages numpy opencv-python-headless pillow
+
+      - name: Ensure Remotion browser
+        run: npx remotion browser ensure
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Render video
+        run: npx remotion render packages/video-engine/src/renderers/remotion/Root.tsx VideoVertical out/video-raw.mp4 --concurrency=2 --codec=h264 --crf=20 --preset=veryfast --log=error
+
+      - name: Master audio in cloud
+        run: ffmpeg -y -i out/video-raw.mp4 -c:v copy -af "loudnorm=I=-14:TP=-1.5:LRA=11" -c:a aac -b:a 192k -movflags +faststart out/what-if-iron-disappears.mp4
+
+      - name: QA final file
+        run: node scripts/qa-ffprobe.js out/what-if-iron-disappears.mp4
+
+      - name: Retention QA
+        run: python3 tools/retention.py analyze out/what-if-iron-disappears.mp4 out/retention --platform shorts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: what-if-iron-disappears
+          path: |
+            out/what-if-iron-disappears.mp4
+            out/retention/**
+          if-no-files-found: error
