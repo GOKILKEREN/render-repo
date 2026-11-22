@@ -1,0 +1,151 @@
+{
+  "duration": 150.0,
+  "fps": 30,
+  "platform": "youtube",
+  "target": {
+    "lufs": -14,
+    "true_peak": -1.0
+  },
+  "duck": {
+    "depth_db": 12,
+    "ramp": 0.25
+  },
+  "checks": {
+    "voice_over_music_db": 14
+  },
+  "tracks": [
+    {
+      "id": "voice",
+      "role": "voice",
+      "file": "vo/voice.wav",
+      "start": 0.0,
+      "gain_db": 0
+    },
+    {
+      "id": "bed",
+      "role": "music",
+      "file": "music/bed.wav",
+      "start": 0.0,
+      "gain_db": -11,
+      "fade_in": 0.5,
+      "fade_out": 2.5,
+      "length": 150.0
+    },
+    {
+      "id": "room",
+      "role": "ambience",
+      "file": "sfx/room.wav",
+      "start": 0.0,
+      "loop": true,
+      "gain_db": -34
+    },
+    {
+      "id": "sfx01",
+      "role": "sfx",
+      "file": "sfx/tick.wav",
+      "start": 0.05,
+      "at": 0.05,
+      "gain_db": -5,
+      "moment": "first iron atom pulse"
+    },
+    {
+      "id": "sfx02",
+      "role": "sfx",
+      "file": "sfx/click.wav",
+      "start": 2.5,
+      "at": 2.5,
+      "gain_db": -5,
+      "moment": "train freezes"
+    },
+    {
+      "id": "sfx03",
+      "role": "sfx",
+      "file": "sfx/thud.wav",
+      "start": 12.405,
+      "at": 12.405,
+      "gain_db": -5,
+      "moment": "bridge collapse"
+    },
+    {
+      "id": "sfx04",
+      "role": "sfx",
+      "file": "sfx/whoosh.wav",
+      "start": 26.205,
+      "at": 26.205,
+      "gain_db": -5,
+      "moment": "oxygen leaves blood"
+    },
+    {
+      "id": "sfx05",
+      "role": "sfx",
+      "file": "sfx/click.wav",
+      "start": 31.383,
+      "at": 31.383,
+      "gain_db": -5,
+      "moment": "farm tools fail"
+    },
+    {
+      "id": "sfx06",
+      "role": "sfx",
+      "file": "sfx/swish.wav",
+      "start": 46.34,
+      "at": 46.34,
+      "gain_db": -5,
+      "moment": "shelves empty"
+    },
+    {
+      "id": "sfx07",
+      "role": "sfx",
+      "file": "sfx/thud.wav",
+      "start": 52.24,
+      "at": 52.24,
+      "gain_db": -5,
+      "moment": "hospital overload"
+    },
+    {
+      "id": "sfx08",
+      "role": "sfx",
+      "file": "sfx/whoosh.wav",
+      "start": 56.055,
+      "at": 56.055,
+      "gain_db": -5,
+      "moment": "time jump to day 90"
+    },
+    {
+      "id": "sfx09",
+      "role": "sfx",
+      "file": "sfx/pop.wav",
+      "start": 58.855,
+      "at": 58.855,
+      "gain_db": -5,
+      "moment": "stone tool appears"
+    },
+    {
+      "id": "sfx10",
+      "role": "sfx",
+      "file": "sfx/chime.wav",
+      "start": 77.982,
+      "at": 77.982,
+      "gain_db": -5,
+      "moment": "day 365 village reveal"
+    },
+    {
+      "id": "sfx11",
+      "role": "sfx",
+      "file": "sfx/shine.wav",
+      "start": 94.082,
+      "at": 94.082,
+      "gain_db": -5,
+      "moment": "fire ignites"
+    },
+    {
+      "id": "sfx12",
+      "role": "sfx",
+      "file": "sfx/chime.wav",
+      "start": 97.292,
+      "at": 97.292,
+      "gain_db": -5,
+      "moment": "final star reveal"
+    }
+  ]
+}
