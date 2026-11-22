@@ -1,0 +1,23 @@
+{
+  "name": "my-project",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "render": "npx remotion render packages/video-engine/src/renderers/remotion/Root.tsx Video out/render.mp4",
+    "render:vertical": "npx remotion render packages/video-engine/src/renderers/remotion/Root.tsx VideoVertical out/vertical.mp4",
+    "qa": "node scripts/qa-ffprobe.js"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.545",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.545"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.9.0"
+  }
+}
