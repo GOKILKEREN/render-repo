@@ -7,5 +7,5 @@ sound/music/
 sound/sfx/
 sound/sfx_lib/
 sound/vo/voice.wav
-public/audio/voice_raw.mp3
+public/audio/*.mp3
 *.log
