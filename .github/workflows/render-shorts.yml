@@ -23,7 +23,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
 
       - uses: actions/setup-python@v5
         with:
@@ -35,10 +34,19 @@ jobs:
           sudo apt-get install -y ffmpeg tesseract-ocr
 
       - name: Install Node dependencies
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
-      - name: Install QA dependencies
-        run: python3 -m pip install --break-system-packages numpy opencv-python-headless pillow
+      - name: Install Python dependencies
+        run: python3 -m pip install --break-system-packages edge-tts numpy scipy opencv-python-headless pillow
+
+      - name: Generate voice in cloud
+        run: python3 tools/generate_voice.py
+
+      - name: Build and master audio in cloud
+        run: python3 tools/build_audio.py
+
+      - name: Build captions in cloud
+        run: python3 tools/build_captions.py
 
       - name: Ensure Remotion browser
         run: npx remotion browser ensure
