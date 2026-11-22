@@ -12,6 +12,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - run: npx remotion render src/index.ts BesiHilang out/video-raw.mp4 --concurrency=2
       - run: ffmpeg -y -i out/video-raw.mp4 -c:v copy -af "loudnorm=I=-14:TP=-1.5:LRA=11" -c:a aac -b:a 192k -movflags +faststart out/video.mp4
       - uses: actions/upload-artifact@v4
