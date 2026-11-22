@@ -1,0 +1,1492 @@
+{
+ "slug": "besi-hilang",
+ "title": "WHAT IF BESI MENGHILANG?",
+ "fps": 30,
+ "total": 3600,
+ "segments": [
+  {
+   "shot": "H1",
+   "a": 0,
+   "b": 30,
+   "t0": 0,
+   "t1": 30,
+   "line": "Hari ini besi menghilang."
+  },
+  {
+   "shot": "H2",
+   "a": 30,
+   "b": 60,
+   "t0": 0,
+   "t1": 30,
+   "line": "HP"
+  },
+  {
+   "shot": "H3",
+   "a": 60,
+   "b": 90,
+   "t0": 0,
+   "t1": 30,
+   "line": "gua meleleh jadi tumpahan"
+  },
+  {
+   "shot": "H4",
+   "a": 90,
+   "b": 120,
+   "t0": 0,
+   "t1": 30,
+   "line": "logam cair."
+  },
+  {
+   "shot": "H5",
+   "a": 120,
+   "b": 150,
+   "t0": 0,
+   "t1": 30,
+   "line": "Serius,"
+  },
+  {
+   "shot": "D1C",
+   "a": 150,
+   "b": 195,
+   "t0": 0,
+   "t1": 45,
+   "line": "ini beneran."
+  },
+  {
+   "shot": "D1A1",
+   "a": 195,
+   "b": 238,
+   "t0": 0,
+   "t1": 43,
+   "line": "Hari pertama."
+  },
+  {
+   "shot": "D1A2",
+   "a": 238,
+   "b": 281,
+   "t0": 0,
+   "t1": 43,
+   "line": "Gagang pintu lepas pas"
+  },
+  {
+   "shot": "D1A3",
+   "a": 281,
+   "b": 324,
+   "t0": 0,
+   "t1": 43,
+   "line": "gua pegang. Mobil"
+  },
+  {
+   "shot": "D1A4",
+   "a": 324,
+   "b": 367,
+   "t0": 0,
+   "t1": 43,
+   "line": "di sebelah lembek kayak adonan."
+  },
+  {
+   "shot": "D1A5",
+   "a": 367,
+   "b": 410,
+   "t0": 0,
+   "t1": 43,
+   "line": "Orang teriak,"
+  },
+  {
+   "shot": "D1A6",
+   "a": 410,
+   "b": 453,
+   "t0": 0,
+   "t1": 43,
+   "line": "lampu lalu lintas"
+  },
+  {
+   "shot": "D1A7",
+   "a": 453,
+   "b": 496,
+   "t0": 0,
+   "t1": 43,
+   "line": "ambruk, dan"
+  },
+  {
+   "shot": "D1A8",
+   "a": 496,
+   "b": 540,
+   "t0": 0,
+   "t1": 44,
+   "line": "semua cuma bisa nanya,"
+  },
+  {
+   "shot": "D3C",
+   "a": 540,
+   "b": 585,
+   "t0": 0,
+   "t1": 45,
+   "line": "ini apaan, bang?"
+  },
+  {
+   "shot": "D3A1",
+   "a": 585,
+   "b": 630,
+   "t0": 0,
+   "t1": 45,
+   "line": "Hari ketiga. Wajan"
+  },
+  {
+   "shot": "D3A2",
+   "a": 630,
+   "b": 675,
+   "t0": 0,
+   "t1": 45,
+   "line": "hilang. Pisau hilang."
+  },
+  {
+   "shot": "D3A3",
+   "a": 675,
+   "b": 720,
+   "t0": 0,
+   "t1": 45,
+   "line": "Sendok?"
+  },
+  {
+   "shot": "D3A4",
+   "a": 720,
+   "b": 765,
+   "t0": 0,
+   "t1": 45,
+   "line": "Juga. Kita makan"
+  },
+  {
+   "shot": "D3A5",
+   "a": 765,
+   "b": 810,
+   "t0": 0,
+   "t1": 45,
+   "line": "pakai tangan, nangis, karena nggak"
+  },
+  {
+   "shot": "D3A6",
+   "a": 810,
+   "b": 855,
+   "t0": 0,
+   "t1": 45,
+   "line": "ada yang dipegang. Mo coba"
+  },
+  {
+   "shot": "D3A7",
+   "a": 855,
+   "b": 900,
+   "t0": 0,
+   "t1": 45,
+   "line": "sendok kayu, langsung"
+  },
+  {
+   "shot": "D7C",
+   "a": 900,
+   "b": 945,
+   "t0": 0,
+   "t1": 45,
+   "line": "patah. Berantakan."
+  },
+  {
+   "shot": "D7A1",
+   "a": 945,
+   "b": 990,
+   "t0": 0,
+   "t1": 45,
+   "line": "Hari ketujuh."
+  },
+  {
+   "shot": "D7A2",
+   "a": 990,
+   "b": 1035,
+   "t0": 0,
+   "t1": 45,
+   "line": "Gedung miring kayak kartu rumah."
+  },
+  {
+   "shot": "D7A3",
+   "a": 1035,
+   "b": 1080,
+   "t0": 0,
+   "t1": 45,
+   "line": "Rel kereta melengkung,"
+  },
+  {
+   "shot": "D7A4",
+   "a": 1080,
+   "b": 1125,
+   "t0": 0,
+   "t1": 45,
+   "line": "kereta keluar jalur,"
+  },
+  {
+   "shot": "D7A5",
+   "a": 1125,
+   "b": 1170,
+   "t0": 0,
+   "t1": 45,
+   "line": "jembatan tinggal puing."
+  },
+  {
+   "shot": "D7A6",
+   "a": 1170,
+   "b": 1215,
+   "t0": 0,
+   "t1": 45,
+   "line": "Peradaban runtuh dalam"
+  },
+  {
+   "shot": "D7A7",
+   "a": 1215,
+   "b": 1260,
+   "t0": 0,
+   "t1": 45,
+   "line": "tujuh hari. Kabel"
+  },
+  {
+   "shot": "D7A8",
+   "a": 1260,
+   "b": 1305,
+   "t0": 0,
+   "t1": 45,
+   "line": "putus, kota gelap,"
+  },
+  {
+   "shot": "D7A9",
+   "a": 1305,
+   "b": 1350,
+   "t0": 0,
+   "t1": 45,
+   "line": "sinyal hilang."
+  },
+  {
+   "shot": "D30C",
+   "a": 1350,
+   "b": 1395,
+   "t0": 0,
+   "t1": 45,
+   "line": "Hari ketiga puluh."
+  },
+  {
+   "shot": "D30A1",
+   "a": 1395,
+   "b": 1440,
+   "t0": 0,
+   "t1": 45,
+   "line": "Besi di darah gua"
+  },
+  {
+   "shot": "D30A2",
+   "a": 1440,
+   "b": 1485,
+   "t0": 0,
+   "t1": 45,
+   "line": "hilang. Dua setengah"
+  },
+  {
+   "shot": "D30A3",
+   "a": 1485,
+   "b": 1530,
+   "t0": 0,
+   "t1": 45,
+   "line": "gram itu kerjaannya bawa oksigen."
+  },
+  {
+   "shot": "D30A4",
+   "a": 1530,
+   "b": 1575,
+   "t0": 0,
+   "t1": 45,
+   "line": "Tanpa itu,"
+  },
+  {
+   "shot": "D30A5",
+   "a": 1575,
+   "b": 1620,
+   "t0": 0,
+   "t1": 45,
+   "line": "otot lemes, jantung"
+  },
+  {
+   "shot": "D30A6",
+   "a": 1620,
+   "b": 1665,
+   "t0": 0,
+   "t1": 45,
+   "line": "ngaco, gua pingsan di lantai."
+  },
+  {
+   "shot": "D30A7",
+   "a": 1665,
+   "b": 1710,
+   "t0": 0,
+   "t1": 45,
+   "line": "Ilmuwan bilang,"
+  },
+  {
+   "shot": "D30A8",
+   "a": 1710,
+   "b": 1755,
+   "t0": 0,
+   "t1": 45,
+   "line": "ini kimia, bukan kutukan."
+  },
+  {
+   "shot": "D30A9",
+   "a": 1755,
+   "b": 1800,
+   "t0": 0,
+   "t1": 45,
+   "line": "Hari ke- enam"
+  },
+  {
+   "shot": "D60C",
+   "a": 1800,
+   "b": 1845,
+   "t0": 0,
+   "t1": 45,
+   "line": "puluh. Oke,"
+  },
+  {
+   "shot": "D60A1",
+   "a": 1845,
+   "b": 1890,
+   "t0": 0,
+   "t1": 45,
+   "line": "adaptasi."
+  },
+  {
+   "shot": "D60A2",
+   "a": 1890,
+   "b": 1935,
+   "t0": 0,
+   "t1": 45,
+   "line": "Pakai batu. Masak pakai"
+  },
+  {
+   "shot": "D60A3",
+   "a": 1935,
+   "b": 1980,
+   "t0": 0,
+   "t1": 45,
+   "line": "batu panas, kunci pakai"
+  },
+  {
+   "shot": "D60A4",
+   "a": 1980,
+   "b": 2025,
+   "t0": 0,
+   "t1": 45,
+   "line": "karet, paku diganti tali."
+  },
+  {
+   "shot": "D60A5",
+   "a": 2025,
+   "b": 2070,
+   "t0": 0,
+   "t1": 45,
+   "line": "Pisau?"
+  },
+  {
+   "shot": "D60A6",
+   "a": 2070,
+   "b": 2115,
+   "t0": 0,
+   "t1": 45,
+   "line": "Batu tajam."
+  },
+  {
+   "shot": "D60A7",
+   "a": 2115,
+   "b": 2160,
+   "t0": 0,
+   "t1": 45,
+   "line": "Mo bilang, ini jaman"
+  },
+  {
+   "shot": "D60A8",
+   "a": 2160,
+   "b": 2205,
+   "t0": 0,
+   "t1": 45,
+   "line": "batu, tapi WiFi nggak."
+  },
+  {
+   "shot": "D60A9",
+   "a": 2205,
+   "b": 2250,
+   "t0": 0,
+   "t1": 45,
+   "line": "Kita ketawa, tapi sakit."
+  },
+  {
+   "shot": "D100C",
+   "a": 2250,
+   "b": 2295,
+   "t0": 0,
+   "t1": 45,
+   "line": "Hari keseratus."
+  },
+  {
+   "shot": "D100A1",
+   "a": 2295,
+   "b": 2340,
+   "t0": 0,
+   "t1": 45,
+   "line": "Ilmuwan bikin roket kayu."
+  },
+  {
+   "shot": "D100A2",
+   "a": 2340,
+   "b": 2385,
+   "t0": 0,
+   "t1": 45,
+   "line": "Mesin karet, baut"
+  },
+  {
+   "shot": "D100A3",
+   "a": 2385,
+   "b": 2430,
+   "t0": 0,
+   "t1": 45,
+   "line": "ijuk. Waktu"
+  },
+  {
+   "shot": "D100A4",
+   "a": 2430,
+   "b": 2475,
+   "t0": 0,
+   "t1": 45,
+   "line": "diluncurin, roket melengkung ditiup"
+  },
+  {
+   "shot": "D100A5",
+   "a": 2475,
+   "b": 2520,
+   "t0": 0,
+   "t1": 45,
+   "line": "angin, muter, jatuh"
+  },
+  {
+   "shot": "D100A6",
+   "a": 2520,
+   "b": 2565,
+   "t0": 0,
+   "t1": 45,
+   "line": "di kebun. Mereka"
+  },
+  {
+   "shot": "D100A7",
+   "a": 2565,
+   "b": 2610,
+   "t0": 0,
+   "t1": 45,
+   "line": "bilang, yang penting berani."
+  },
+  {
+   "shot": "D100A8",
+   "a": 2610,
+   "b": 2655,
+   "t0": 0,
+   "t1": 45,
+   "line": "Gua bilang, yang penting"
+  },
+  {
+   "shot": "D100A9",
+   "a": 2655,
+   "b": 2700,
+   "t0": 0,
+   "t1": 45,
+   "line": "nggak meledak. Hari kedua"
+  },
+  {
+   "shot": "D200C",
+   "a": 2700,
+   "b": 2745,
+   "t0": 0,
+   "t1": 45,
+   "line": "ratus. Muncul sekte"
+  },
+  {
+   "shot": "D200A1",
+   "a": 2745,
+   "b": 2790,
+   "t0": 0,
+   "t1": 45,
+   "line": "karat. Mereka nyembah"
+  },
+  {
+   "shot": "D200A2",
+   "a": 2790,
+   "b": 2835,
+   "t0": 0,
+   "t1": 45,
+   "line": "sisa besi di tanah."
+  },
+  {
+   "shot": "D200A3",
+   "a": 2835,
+   "b": 2880,
+   "t0": 0,
+   "t1": 45,
+   "line": "Upacaranya? Minum"
+  },
+  {
+   "shot": "D200A4",
+   "a": 2880,
+   "b": 2925,
+   "t0": 0,
+   "t1": 45,
+   "line": "air karat sambil nyanyi."
+  },
+  {
+   "shot": "D200A5",
+   "a": 2925,
+   "b": 2970,
+   "t0": 0,
+   "t1": 45,
+   "line": "Nggak masuk akal, tapi harapan"
+  },
+  {
+   "shot": "D200A6",
+   "a": 2970,
+   "b": 3015,
+   "t0": 0,
+   "t1": 45,
+   "line": "murah. Semua"
+  },
+  {
+   "shot": "D200A7",
+   "a": 3015,
+   "b": 3060,
+   "t0": 0,
+   "t1": 45,
+   "line": "butuh sesuatu buat dipercaya."
+  },
+  {
+   "shot": "D200A8",
+   "a": 3060,
+   "b": 3105,
+   "t0": 0,
+   "t1": 45,
+   "line": "Hari ketiga ratus enam"
+  },
+  {
+   "shot": "D200A9",
+   "a": 3105,
+   "b": 3150,
+   "t0": 0,
+   "t1": 45,
+   "line": "puluh lima. Setahun"
+  },
+  {
+   "shot": "D365C",
+   "a": 3150,
+   "b": 3195,
+   "t0": 0,
+   "t1": 45,
+   "line": "sudah. Tanpa besi,"
+  },
+  {
+   "shot": "D365A1",
+   "a": 3195,
+   "b": 3240,
+   "t0": 0,
+   "t1": 45,
+   "line": "tanpa kota, tanpa sendok."
+  },
+  {
+   "shot": "D365A2",
+   "a": 3240,
+   "b": 3285,
+   "t0": 0,
+   "t1": 45,
+   "line": "Terus gua buka laci dapur."
+  },
+  {
+   "shot": "D365A3",
+   "a": 3285,
+   "b": 3330,
+   "t0": 0,
+   "t1": 45,
+   "line": "Ada sendok besi"
+  },
+  {
+   "shot": "D365A4",
+   "a": 3330,
+   "b": 3375,
+   "t0": 0,
+   "t1": 45,
+   "line": "kotor, belum dicuci, masih"
+  },
+  {
+   "shot": "D365A5",
+   "a": 3375,
+   "b": 3420,
+   "t0": 0,
+   "t1": 45,
+   "line": "karat. Satu- satunya"
+  },
+  {
+   "shot": "D365A6",
+   "a": 3420,
+   "b": 3465,
+   "t0": 0,
+   "t1": 45,
+   "line": "harapan umat manusia. Gua"
+  },
+  {
+   "shot": "D365A7",
+   "a": 3465,
+   "b": 3510,
+   "t0": 0,
+   "t1": 45,
+   "line": "pegang. Masih hangat."
+  },
+  {
+   "shot": "D365A8",
+   "a": 3510,
+   "b": 3555,
+   "t0": 0,
+   "t1": 45,
+   "line": ""
+  },
+  {
+   "shot": "D365A9",
+   "a": 3555,
+   "b": 3600,
+   "t0": 0,
+   "t1": 45,
+   "line": ""
+  }
+ ],
+ "shots": [
+  {
+   "id": "H1",
+   "size": "wide",
+   "key": 15,
+   "len": 30,
+   "first": 0,
+   "line": "Hari ini besi menghilang.",
+   "note": "title"
+  },
+  {
+   "id": "H2",
+   "size": "macro",
+   "key": 15,
+   "len": 30,
+   "first": 30,
+   "line": "HP",
+   "note": "phone"
+  },
+  {
+   "id": "H3",
+   "size": "medium",
+   "key": 15,
+   "len": 30,
+   "first": 60,
+   "line": "gua meleleh jadi tumpahan",
+   "note": "molten"
+  },
+  {
+   "id": "H4",
+   "size": "close",
+   "key": 15,
+   "len": 30,
+   "first": 90,
+   "line": "logam cair.",
+   "note": "hand"
+  },
+  {
+   "id": "H5",
+   "size": "high",
+   "key": 15,
+   "len": 30,
+   "first": 120,
+   "line": "Serius,",
+   "note": "panic"
+  },
+  {
+   "id": "D1C",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 150,
+   "line": "ini beneran.",
+   "note": "day"
+  },
+  {
+   "id": "D1A1",
+   "size": "medium",
+   "key": 20,
+   "len": 43,
+   "first": 195,
+   "line": "Hari pertama.",
+   "note": "handle"
+  },
+  {
+   "id": "D1A2",
+   "size": "close",
+   "key": 20,
+   "len": 43,
+   "first": 238,
+   "line": "Gagang pintu lepas pas",
+   "note": "car"
+  },
+  {
+   "id": "D1A3",
+   "size": "high",
+   "key": 20,
+   "len": 43,
+   "first": 281,
+   "line": "gua pegang. Mobil",
+   "note": "traffic"
+  },
+  {
+   "id": "D1A4",
+   "size": "low",
+   "key": 20,
+   "len": 43,
+   "first": 324,
+   "line": "di sebelah lembek kayak adonan.",
+   "note": "ask"
+  },
+  {
+   "id": "D1A5",
+   "size": "medium",
+   "key": 20,
+   "len": 43,
+   "first": 367,
+   "line": "Orang teriak,",
+   "note": "handle"
+  },
+  {
+   "id": "D1A6",
+   "size": "macro",
+   "key": 20,
+   "len": 43,
+   "first": 410,
+   "line": "lampu lalu lintas",
+   "note": "car"
+  },
+  {
+   "id": "D1A7",
+   "size": "wide",
+   "key": 20,
+   "len": 43,
+   "first": 453,
+   "line": "ambruk, dan",
+   "note": "panic"
+  },
+  {
+   "id": "D1A8",
+   "size": "close",
+   "key": 20,
+   "len": 44,
+   "first": 496,
+   "line": "semua cuma bisa nanya,",
+   "note": "handle"
+  },
+  {
+   "id": "D3C",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 540,
+   "line": "ini apaan, bang?",
+   "note": "day"
+  },
+  {
+   "id": "D3A1",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 585,
+   "line": "Hari ketiga. Wajan",
+   "note": "pan"
+  },
+  {
+   "id": "D3A2",
+   "size": "high",
+   "key": 20,
+   "len": 45,
+   "first": 630,
+   "line": "hilang. Pisau hilang.",
+   "note": "knife"
+  },
+  {
+   "id": "D3A3",
+   "size": "low",
+   "key": 20,
+   "len": 45,
+   "first": 675,
+   "line": "Sendok?",
+   "note": "spoon"
+  },
+  {
+   "id": "D3A4",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 720,
+   "line": "Juga. Kita makan",
+   "note": "handeat"
+  },
+  {
+   "id": "D3A5",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 765,
+   "line": "pakai tangan, nangis, karena nggak",
+   "note": "cry"
+  },
+  {
+   "id": "D3A6",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 810,
+   "line": "ada yang dipegang. Mo coba",
+   "note": "pan"
+  },
+  {
+   "id": "D3A7",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 855,
+   "line": "sendok kayu, langsung",
+   "note": "spoon"
+  },
+  {
+   "id": "D7C",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 900,
+   "line": "patah. Berantakan.",
+   "note": "day"
+  },
+  {
+   "id": "D7A1",
+   "size": "high",
+   "key": 20,
+   "len": 45,
+   "first": 945,
+   "line": "Hari ketujuh.",
+   "note": "building"
+  },
+  {
+   "id": "D7A2",
+   "size": "low",
+   "key": 20,
+   "len": 45,
+   "first": 990,
+   "line": "Gedung miring kayak kartu rumah.",
+   "note": "rail"
+  },
+  {
+   "id": "D7A3",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 1035,
+   "line": "Rel kereta melengkung,",
+   "note": "bridge"
+  },
+  {
+   "id": "D7A4",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 1080,
+   "line": "kereta keluar jalur,",
+   "note": "city"
+  },
+  {
+   "id": "D7A5",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 1125,
+   "line": "jembatan tinggal puing.",
+   "note": "building"
+  },
+  {
+   "id": "D7A6",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 1170,
+   "line": "Peradaban runtuh dalam",
+   "note": "rail"
+  },
+  {
+   "id": "D7A7",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 1215,
+   "line": "tujuh hari. Kabel",
+   "note": "city"
+  },
+  {
+   "id": "D7A8",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 1260,
+   "line": "putus, kota gelap,",
+   "note": "bridge"
+  },
+  {
+   "id": "D7A9",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 1305,
+   "line": "sinyal hilang.",
+   "note": "panic"
+  },
+  {
+   "id": "D30C",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 1350,
+   "line": "Hari ketiga puluh.",
+   "note": "day"
+  },
+  {
+   "id": "D30A1",
+   "size": "low",
+   "key": 20,
+   "len": 45,
+   "first": 1395,
+   "line": "Besi di darah gua",
+   "note": "blood"
+  },
+  {
+   "id": "D30A2",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 1440,
+   "line": "hilang. Dua setengah",
+   "note": "oxygen"
+  },
+  {
+   "id": "D30A3",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 1485,
+   "line": "gram itu kerjaannya bawa oksigen.",
+   "note": "faint"
+  },
+  {
+   "id": "D30A4",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 1530,
+   "line": "Tanpa itu,",
+   "note": "scientist"
+  },
+  {
+   "id": "D30A5",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 1575,
+   "line": "otot lemes, jantung",
+   "note": "blood"
+  },
+  {
+   "id": "D30A6",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 1620,
+   "line": "ngaco, gua pingsan di lantai.",
+   "note": "oxygen"
+  },
+  {
+   "id": "D30A7",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 1665,
+   "line": "Ilmuwan bilang,",
+   "note": "faint"
+  },
+  {
+   "id": "D30A8",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 1710,
+   "line": "ini kimia, bukan kutukan.",
+   "note": "scientist"
+  },
+  {
+   "id": "D30A9",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 1755,
+   "line": "Hari ke- enam",
+   "note": "blood"
+  },
+  {
+   "id": "D60C",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 1800,
+   "line": "puluh. Oke,",
+   "note": "day"
+  },
+  {
+   "id": "D60A1",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 1845,
+   "line": "adaptasi.",
+   "note": "stonecook"
+  },
+  {
+   "id": "D60A2",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 1890,
+   "line": "Pakai batu. Masak pakai",
+   "note": "rubberkey"
+  },
+  {
+   "id": "D60A3",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 1935,
+   "line": "batu panas, kunci pakai",
+   "note": "rope"
+  },
+  {
+   "id": "D60A4",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 1980,
+   "line": "karet, paku diganti tali.",
+   "note": "stoneblade"
+  },
+  {
+   "id": "D60A5",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 2025,
+   "line": "Pisau?",
+   "note": "mo"
+  },
+  {
+   "id": "D60A6",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 2070,
+   "line": "Batu tajam.",
+   "note": "stonecook"
+  },
+  {
+   "id": "D60A7",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 2115,
+   "line": "Mo bilang, ini jaman",
+   "note": "rubberkey"
+  },
+  {
+   "id": "D60A8",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 2160,
+   "line": "batu, tapi WiFi nggak.",
+   "note": "mo"
+  },
+  {
+   "id": "D60A9",
+   "size": "high",
+   "key": 20,
+   "len": 45,
+   "first": 2205,
+   "line": "Kita ketawa, tapi sakit.",
+   "note": "rope"
+  },
+  {
+   "id": "D100C",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 2250,
+   "line": "Hari keseratus.",
+   "note": "day"
+  },
+  {
+   "id": "D100A1",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 2295,
+   "line": "Ilmuwan bikin roket kayu.",
+   "note": "woodrocket"
+  },
+  {
+   "id": "D100A2",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 2340,
+   "line": "Mesin karet, baut",
+   "note": "wind"
+  },
+  {
+   "id": "D100A3",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 2385,
+   "line": "ijuk. Waktu",
+   "note": "crash"
+  },
+  {
+   "id": "D100A4",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 2430,
+   "line": "diluncurin, roket melengkung ditiup",
+   "note": "brave"
+  },
+  {
+   "id": "D100A5",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 2475,
+   "line": "angin, muter, jatuh",
+   "note": "safe"
+  },
+  {
+   "id": "D100A6",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 2520,
+   "line": "di kebun. Mereka",
+   "note": "woodrocket"
+  },
+  {
+   "id": "D100A7",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 2565,
+   "line": "bilang, yang penting berani.",
+   "note": "wind"
+  },
+  {
+   "id": "D100A8",
+   "size": "high",
+   "key": 20,
+   "len": 45,
+   "first": 2610,
+   "line": "Gua bilang, yang penting",
+   "note": "crash"
+  },
+  {
+   "id": "D100A9",
+   "size": "low",
+   "key": 20,
+   "len": 45,
+   "first": 2655,
+   "line": "nggak meledak. Hari kedua",
+   "note": "safe"
+  },
+  {
+   "id": "D200C",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 2700,
+   "line": "ratus. Muncul sekte",
+   "note": "day"
+  },
+  {
+   "id": "D200A1",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 2745,
+   "line": "karat. Mereka nyembah",
+   "note": "cult"
+  },
+  {
+   "id": "D200A2",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 2790,
+   "line": "sisa besi di tanah.",
+   "note": "worship"
+  },
+  {
+   "id": "D200A3",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 2835,
+   "line": "Upacaranya? Minum",
+   "note": "ritual"
+  },
+  {
+   "id": "D200A4",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 2880,
+   "line": "air karat sambil nyanyi.",
+   "note": "hope"
+  },
+  {
+   "id": "D200A5",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 2925,
+   "line": "Nggak masuk akal, tapi harapan",
+   "note": "faith"
+  },
+  {
+   "id": "D200A6",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 2970,
+   "line": "murah. Semua",
+   "note": "cult"
+  },
+  {
+   "id": "D200A7",
+   "size": "high",
+   "key": 20,
+   "len": 45,
+   "first": 3015,
+   "line": "butuh sesuatu buat dipercaya.",
+   "note": "ritual"
+  },
+  {
+   "id": "D200A8",
+   "size": "low",
+   "key": 20,
+   "len": 45,
+   "first": 3060,
+   "line": "Hari ketiga ratus enam",
+   "note": "faith"
+  },
+  {
+   "id": "D200A9",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 3105,
+   "line": "puluh lima. Setahun",
+   "note": "hope"
+  },
+  {
+   "id": "D365C",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 3150,
+   "line": "sudah. Tanpa besi,",
+   "note": "day"
+  },
+  {
+   "id": "D365A1",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 3195,
+   "line": "tanpa kota, tanpa sendok.",
+   "note": "year"
+  },
+  {
+   "id": "D365A2",
+   "size": "wide",
+   "key": 20,
+   "len": 45,
+   "first": 3240,
+   "line": "Terus gua buka laci dapur.",
+   "note": "drawer"
+  },
+  {
+   "id": "D365A3",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 3285,
+   "line": "Ada sendok besi",
+   "note": "dirtyspoon"
+  },
+  {
+   "id": "D365A4",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 3330,
+   "line": "kotor, belum dicuci, masih",
+   "note": "finaltext"
+  },
+  {
+   "id": "D365A5",
+   "size": "close",
+   "key": 20,
+   "len": 45,
+   "first": 3375,
+   "line": "karat. Satu- satunya",
+   "note": "hold"
+  },
+  {
+   "id": "D365A6",
+   "size": "high",
+   "key": 20,
+   "len": 45,
+   "first": 3420,
+   "line": "harapan umat manusia. Gua",
+   "note": "dirtyspoon"
+  },
+  {
+   "id": "D365A7",
+   "size": "low",
+   "key": 20,
+   "len": 45,
+   "first": 3465,
+   "line": "pegang. Masih hangat.",
+   "note": "finaltext"
+  },
+  {
+   "id": "D365A8",
+   "size": "medium",
+   "key": 20,
+   "len": 45,
+   "first": 3510,
+   "line": "",
+   "note": "hold"
+  },
+  {
+   "id": "D365A9",
+   "size": "macro",
+   "key": 20,
+   "len": 45,
+   "first": 3555,
+   "line": "",
+   "note": "dirtyspoon"
+  }
+ ],
+ "fx": [
+  {
+   "kind": "flash",
+   "color": "#FFD9A0",
+   "o": 0.7,
+   "f": 0
+  },
+  {
+   "kind": "flash",
+   "color": "#FFB15C",
+   "o": 0.55,
+   "f": 150
+  },
+  {
+   "kind": "flash",
+   "color": "#FFB15C",
+   "o": 0.55,
+   "f": 540
+  },
+  {
+   "kind": "flash",
+   "color": "#FFB15C",
+   "o": 0.55,
+   "f": 900
+  },
+  {
+   "kind": "flash",
+   "color": "#FFB15C",
+   "o": 0.55,
+   "f": 1350
+  },
+  {
+   "kind": "flash",
+   "color": "#FFB15C",
+   "o": 0.55,
+   "f": 1800
+  },
+  {
+   "kind": "flash",
+   "color": "#FFB15C",
+   "o": 0.55,
+   "f": 2250
+  },
+  {
+   "kind": "flash",
+   "color": "#FFB15C",
+   "o": 0.55,
+   "f": 2700
+  },
+  {
+   "kind": "flash",
+   "color": "#FFB15C",
+   "o": 0.55,
+   "f": 3150
+  },
+  {
+   "kind": "shake",
+   "len": 12,
+   "amp": 16,
+   "f": 1010
+  },
+  {
+   "kind": "shake",
+   "len": 10,
+   "amp": 12,
+   "f": 1120
+  },
+  {
+   "kind": "shake",
+   "len": 12,
+   "amp": 14,
+   "f": 2430
+  },
+  {
+   "kind": "flash",
+   "color": "#E2A24A",
+   "o": 0.5,
+   "f": 3440
+  }
+ ],
+  "audio": {
+   "voice": "besi-hilang/voice.mp3",
+   "sfx": "besi-hilang/sfx.mp3",
+   "music": "besi-hilang/music.mp3",
+   "voiceVol": 0.92,
+   "sfxVol": 0.55,
+   "musicVol": 0.14
+  }
+}

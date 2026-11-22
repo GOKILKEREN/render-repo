@@ -1,0 +1,1151 @@
+{
+  "id": "BesiHilang",
+  "slug": "besi-hilang",
+  "topic": "What if all iron disappeared overnight?",
+  "title": [
+    "WHAT IF",
+    "BESI MENGHILANG?"
+  ],
+  "fps": 30,
+  "lead": 2,
+  "tail": 0,
+  "script": [
+    {
+      "beat": "hook 0-5s: phone melts",
+      "text": "Hari ini besi menghilang. HP gua meleleh jadi tumpahan logam cair. Serius, ini beneran."
+    },
+    {
+      "beat": "DAY 1 5-18s: doors, cars, panic",
+      "text": "Hari pertama. Gagang pintu lepas pas gua pegang. Mobil di sebelah lembek kayak adonan. Orang teriak, lampu lalu lintas ambruk, dan semua cuma bisa nanya, ini apaan, bang?"
+    },
+    {
+      "beat": "DAY 3 18-30s: cookware gone",
+      "text": "Hari ketiga. Wajan hilang. Pisau hilang. Sendok? Juga. Kita makan pakai tangan, nangis, karena nggak ada yang dipegang. Mo coba sendok kayu, langsung patah. Berantakan."
+    },
+    {
+      "beat": "DAY 7 30-45s: civilisation buckles",
+      "text": "Hari ketujuh. Gedung miring kayak kartu rumah. Rel kereta melengkung, kereta keluar jalur, jembatan tinggal puing. Peradaban runtuh dalam tujuh hari. Kabel putus, kota gelap, sinyal hilang."
+    },
+    {
+      "beat": "DAY 30 45-60s: blood iron, real science",
+      "text": "Hari ketiga puluh. Besi di darah gua hilang. Dua setengah gram itu kerjaannya bawa oksigen. Tanpa itu, otot lemes, jantung ngaco, gua pingsan di lantai. Ilmuwan bilang, ini kimia, bukan kutukan."
+    },
+    {
+      "beat": "DAY 60 60-75s: stone age adaptation",
+      "text": "Hari ke-enam puluh. Oke, adaptasi. Pakai batu. Masak pakai batu panas, kunci pakai karet, paku diganti tali. Pisau? Batu tajam. Mo bilang, ini jaman batu, tapi WiFi nggak. Kita ketawa, tapi sakit."
+    },
+    {
+      "beat": "DAY 100 75-90s: wooden rocket",
+      "text": "Hari keseratus. Ilmuwan bikin roket kayu. Mesin karet, baut ijuk. Waktu diluncurin, roket melengkung ditiup angin, muter, jatuh di kebun. Mereka bilang, yang penting berani. Gua bilang, yang penting nggak meledak."
+    },
+    {
+      "beat": "DAY 200 90-105s: rust cult",
+      "text": "Hari kedua ratus. Muncul sekte karat. Mereka nyembah sisa besi di tanah. Upacaranya? Minum air karat sambil nyanyi. Nggak masuk akal, tapi harapan murah. Semua butuh sesuatu buat dipercaya."
+    },
+    {
+      "beat": "DAY 365 105-120s: twist, dirty spoon",
+      "text": "Hari ketiga ratus enam puluh lima. Setahun sudah. Tanpa besi, tanpa kota, tanpa sendok. Terus gua buka laci dapur. Ada sendok besi kotor, belum dicuci, masih karat. Satu-satunya harapan umat manusia. Gua pegang. Masih hangat."
+    }
+  ],
+  "science": [
+    {
+      "claim": "Darah manusia membawa sekitar 2,5 gram besi untuk mengikat oksigen.",
+      "working": "Sekitar 70% besi tubuh ada dalam hemoglobin; pada orang dewasa 70 kg total besi tubuh kurang lebih 3-4 g, sehingga hemoglobin menyimpan sekitar 2,5 g. Besi pada hem adalah pusat pengikat O2; tanpa itu darah tidak dapat mengangkut oksigen.",
+      "source": "NIH Iron: Health Professional Fact Sheet; Andrews, N. et al., Iron Metabolism, Annual Review of Nutrition"
+    }
+  ],
+  "voice": {
+    "id": "TX3LPaxmHKxFdv7VOQHJ",
+    "model": "eleven_multilingual_v2",
+    "settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.8,
+      "style": 0.35,
+      "use_speaker_boost": true,
+      "speed": 1.0
+    }
+  },
+  "gaps": {
+    "word": 0.22,
+    "comma": 0.42,
+    "sentence": 0.72,
+    "question": 0.82
+  },
+  "shots": [
+    {
+      "id": "H1",
+      "size": "wide",
+      "key": 15,
+      "len": 30,
+      "note": "title"
+    },
+    {
+      "id": "H2",
+      "size": "macro",
+      "key": 15,
+      "len": 30,
+      "note": "phone"
+    },
+    {
+      "id": "H3",
+      "size": "medium",
+      "key": 15,
+      "len": 30,
+      "note": "molten"
+    },
+    {
+      "id": "H4",
+      "size": "close",
+      "key": 15,
+      "len": 30,
+      "note": "hand"
+    },
+    {
+      "id": "H5",
+      "size": "high",
+      "key": 15,
+      "len": 30,
+      "note": "panic"
+    },
+    {
+      "id": "D1C",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "day"
+    },
+    {
+      "id": "D1A1",
+      "size": "medium",
+      "key": 20,
+      "len": 43,
+      "note": "handle"
+    },
+    {
+      "id": "D1A2",
+      "size": "close",
+      "key": 20,
+      "len": 43,
+      "note": "car"
+    },
+    {
+      "id": "D1A3",
+      "size": "high",
+      "key": 20,
+      "len": 43,
+      "note": "traffic"
+    },
+    {
+      "id": "D1A4",
+      "size": "low",
+      "key": 20,
+      "len": 43,
+      "note": "ask"
+    },
+    {
+      "id": "D1A5",
+      "size": "medium",
+      "key": 20,
+      "len": 43,
+      "note": "handle"
+    },
+    {
+      "id": "D1A6",
+      "size": "macro",
+      "key": 20,
+      "len": 43,
+      "note": "car"
+    },
+    {
+      "id": "D1A7",
+      "size": "wide",
+      "key": 20,
+      "len": 43,
+      "note": "panic"
+    },
+    {
+      "id": "D1A8",
+      "size": "close",
+      "key": 20,
+      "len": 44,
+      "note": "handle"
+    },
+    {
+      "id": "D3C",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "day"
+    },
+    {
+      "id": "D3A1",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "pan"
+    },
+    {
+      "id": "D3A2",
+      "size": "high",
+      "key": 20,
+      "len": 45,
+      "note": "knife"
+    },
+    {
+      "id": "D3A3",
+      "size": "low",
+      "key": 20,
+      "len": 45,
+      "note": "spoon"
+    },
+    {
+      "id": "D3A4",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "handeat"
+    },
+    {
+      "id": "D3A5",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "cry"
+    },
+    {
+      "id": "D3A6",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "pan"
+    },
+    {
+      "id": "D3A7",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "spoon"
+    },
+    {
+      "id": "D7C",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "day"
+    },
+    {
+      "id": "D7A1",
+      "size": "high",
+      "key": 20,
+      "len": 45,
+      "note": "building"
+    },
+    {
+      "id": "D7A2",
+      "size": "low",
+      "key": 20,
+      "len": 45,
+      "note": "rail"
+    },
+    {
+      "id": "D7A3",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "bridge"
+    },
+    {
+      "id": "D7A4",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "city"
+    },
+    {
+      "id": "D7A5",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "building"
+    },
+    {
+      "id": "D7A6",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "rail"
+    },
+    {
+      "id": "D7A7",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "city"
+    },
+    {
+      "id": "D7A8",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "bridge"
+    },
+    {
+      "id": "D7A9",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "panic"
+    },
+    {
+      "id": "D30C",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "day"
+    },
+    {
+      "id": "D30A1",
+      "size": "low",
+      "key": 20,
+      "len": 45,
+      "note": "blood"
+    },
+    {
+      "id": "D30A2",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "oxygen"
+    },
+    {
+      "id": "D30A3",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "faint"
+    },
+    {
+      "id": "D30A4",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "scientist"
+    },
+    {
+      "id": "D30A5",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "blood"
+    },
+    {
+      "id": "D30A6",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "oxygen"
+    },
+    {
+      "id": "D30A7",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "faint"
+    },
+    {
+      "id": "D30A8",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "scientist"
+    },
+    {
+      "id": "D30A9",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "blood"
+    },
+    {
+      "id": "D60C",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "day"
+    },
+    {
+      "id": "D60A1",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "stonecook"
+    },
+    {
+      "id": "D60A2",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "rubberkey"
+    },
+    {
+      "id": "D60A3",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "rope"
+    },
+    {
+      "id": "D60A4",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "stoneblade"
+    },
+    {
+      "id": "D60A5",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "mo"
+    },
+    {
+      "id": "D60A6",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "stonecook"
+    },
+    {
+      "id": "D60A7",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "rubberkey"
+    },
+    {
+      "id": "D60A8",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "mo"
+    },
+    {
+      "id": "D60A9",
+      "size": "high",
+      "key": 20,
+      "len": 45,
+      "note": "rope"
+    },
+    {
+      "id": "D100C",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "day"
+    },
+    {
+      "id": "D100A1",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "woodrocket"
+    },
+    {
+      "id": "D100A2",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "wind"
+    },
+    {
+      "id": "D100A3",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "crash"
+    },
+    {
+      "id": "D100A4",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "brave"
+    },
+    {
+      "id": "D100A5",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "safe"
+    },
+    {
+      "id": "D100A6",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "woodrocket"
+    },
+    {
+      "id": "D100A7",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "wind"
+    },
+    {
+      "id": "D100A8",
+      "size": "high",
+      "key": 20,
+      "len": 45,
+      "note": "crash"
+    },
+    {
+      "id": "D100A9",
+      "size": "low",
+      "key": 20,
+      "len": 45,
+      "note": "safe"
+    },
+    {
+      "id": "D200C",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "day"
+    },
+    {
+      "id": "D200A1",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "cult"
+    },
+    {
+      "id": "D200A2",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "worship"
+    },
+    {
+      "id": "D200A3",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "ritual"
+    },
+    {
+      "id": "D200A4",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "hope"
+    },
+    {
+      "id": "D200A5",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "faith"
+    },
+    {
+      "id": "D200A6",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "cult"
+    },
+    {
+      "id": "D200A7",
+      "size": "high",
+      "key": 20,
+      "len": 45,
+      "note": "ritual"
+    },
+    {
+      "id": "D200A8",
+      "size": "low",
+      "key": 20,
+      "len": 45,
+      "note": "faith"
+    },
+    {
+      "id": "D200A9",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "hope"
+    },
+    {
+      "id": "D365C",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "day"
+    },
+    {
+      "id": "D365A1",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "year"
+    },
+    {
+      "id": "D365A2",
+      "size": "wide",
+      "key": 20,
+      "len": 45,
+      "note": "drawer"
+    },
+    {
+      "id": "D365A3",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "dirtyspoon"
+    },
+    {
+      "id": "D365A4",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "finaltext"
+    },
+    {
+      "id": "D365A5",
+      "size": "close",
+      "key": 20,
+      "len": 45,
+      "note": "hold"
+    },
+    {
+      "id": "D365A6",
+      "size": "high",
+      "key": 20,
+      "len": 45,
+      "note": "dirtyspoon"
+    },
+    {
+      "id": "D365A7",
+      "size": "low",
+      "key": 20,
+      "len": 45,
+      "note": "finaltext"
+    },
+    {
+      "id": "D365A8",
+      "size": "medium",
+      "key": 20,
+      "len": 45,
+      "note": "hold"
+    },
+    {
+      "id": "D365A9",
+      "size": "macro",
+      "key": 20,
+      "len": 45,
+      "note": "dirtyspoon"
+    }
+  ],
+  "edit": [
+    {
+      "shot": "H1",
+      "at": "f:0",
+      "look": ""
+    },
+    {
+      "shot": "H2",
+      "at": "f:30",
+      "look": ""
+    },
+    {
+      "shot": "H3",
+      "at": "f:60",
+      "look": ""
+    },
+    {
+      "shot": "H4",
+      "at": "f:90",
+      "look": ""
+    },
+    {
+      "shot": "H5",
+      "at": "f:120",
+      "look": ""
+    },
+    {
+      "shot": "D1C",
+      "at": "f:150",
+      "look": ""
+    },
+    {
+      "shot": "D1A1",
+      "at": "f:195",
+      "look": ""
+    },
+    {
+      "shot": "D1A2",
+      "at": "f:238",
+      "look": ""
+    },
+    {
+      "shot": "D1A3",
+      "at": "f:281",
+      "look": ""
+    },
+    {
+      "shot": "D1A4",
+      "at": "f:324",
+      "look": ""
+    },
+    {
+      "shot": "D1A5",
+      "at": "f:367",
+      "look": ""
+    },
+    {
+      "shot": "D1A6",
+      "at": "f:410",
+      "look": ""
+    },
+    {
+      "shot": "D1A7",
+      "at": "f:453",
+      "look": ""
+    },
+    {
+      "shot": "D1A8",
+      "at": "f:496",
+      "look": ""
+    },
+    {
+      "shot": "D3C",
+      "at": "f:540",
+      "look": ""
+    },
+    {
+      "shot": "D3A1",
+      "at": "f:585",
+      "look": ""
+    },
+    {
+      "shot": "D3A2",
+      "at": "f:630",
+      "look": ""
+    },
+    {
+      "shot": "D3A3",
+      "at": "f:675",
+      "look": ""
+    },
+    {
+      "shot": "D3A4",
+      "at": "f:720",
+      "look": ""
+    },
+    {
+      "shot": "D3A5",
+      "at": "f:765",
+      "look": ""
+    },
+    {
+      "shot": "D3A6",
+      "at": "f:810",
+      "look": ""
+    },
+    {
+      "shot": "D3A7",
+      "at": "f:855",
+      "look": ""
+    },
+    {
+      "shot": "D7C",
+      "at": "f:900",
+      "look": ""
+    },
+    {
+      "shot": "D7A1",
+      "at": "f:945",
+      "look": ""
+    },
+    {
+      "shot": "D7A2",
+      "at": "f:990",
+      "look": ""
+    },
+    {
+      "shot": "D7A3",
+      "at": "f:1035",
+      "look": ""
+    },
+    {
+      "shot": "D7A4",
+      "at": "f:1080",
+      "look": ""
+    },
+    {
+      "shot": "D7A5",
+      "at": "f:1125",
+      "look": ""
+    },
+    {
+      "shot": "D7A6",
+      "at": "f:1170",
+      "look": ""
+    },
+    {
+      "shot": "D7A7",
+      "at": "f:1215",
+      "look": ""
+    },
+    {
+      "shot": "D7A8",
+      "at": "f:1260",
+      "look": ""
+    },
+    {
+      "shot": "D7A9",
+      "at": "f:1305",
+      "look": ""
+    },
+    {
+      "shot": "D30C",
+      "at": "f:1350",
+      "look": ""
+    },
+    {
+      "shot": "D30A1",
+      "at": "f:1395",
+      "look": ""
+    },
+    {
+      "shot": "D30A2",
+      "at": "f:1440",
+      "look": ""
+    },
+    {
+      "shot": "D30A3",
+      "at": "f:1485",
+      "look": ""
+    },
+    {
+      "shot": "D30A4",
+      "at": "f:1530",
+      "look": ""
+    },
+    {
+      "shot": "D30A5",
+      "at": "f:1575",
+      "look": ""
+    },
+    {
+      "shot": "D30A6",
+      "at": "f:1620",
+      "look": ""
+    },
+    {
+      "shot": "D30A7",
+      "at": "f:1665",
+      "look": ""
+    },
+    {
+      "shot": "D30A8",
+      "at": "f:1710",
+      "look": ""
+    },
+    {
+      "shot": "D30A9",
+      "at": "f:1755",
+      "look": ""
+    },
+    {
+      "shot": "D60C",
+      "at": "f:1800",
+      "look": ""
+    },
+    {
+      "shot": "D60A1",
+      "at": "f:1845",
+      "look": ""
+    },
+    {
+      "shot": "D60A2",
+      "at": "f:1890",
+      "look": ""
+    },
+    {
+      "shot": "D60A3",
+      "at": "f:1935",
+      "look": ""
+    },
+    {
+      "shot": "D60A4",
+      "at": "f:1980",
+      "look": ""
+    },
+    {
+      "shot": "D60A5",
+      "at": "f:2025",
+      "look": ""
+    },
+    {
+      "shot": "D60A6",
+      "at": "f:2070",
+      "look": ""
+    },
+    {
+      "shot": "D60A7",
+      "at": "f:2115",
+      "look": ""
+    },
+    {
+      "shot": "D60A8",
+      "at": "f:2160",
+      "look": ""
+    },
+    {
+      "shot": "D60A9",
+      "at": "f:2205",
+      "look": ""
+    },
+    {
+      "shot": "D100C",
+      "at": "f:2250",
+      "look": ""
+    },
+    {
+      "shot": "D100A1",
+      "at": "f:2295",
+      "look": ""
+    },
+    {
+      "shot": "D100A2",
+      "at": "f:2340",
+      "look": ""
+    },
+    {
+      "shot": "D100A3",
+      "at": "f:2385",
+      "look": ""
+    },
+    {
+      "shot": "D100A4",
+      "at": "f:2430",
+      "look": ""
+    },
+    {
+      "shot": "D100A5",
+      "at": "f:2475",
+      "look": ""
+    },
+    {
+      "shot": "D100A6",
+      "at": "f:2520",
+      "look": ""
+    },
+    {
+      "shot": "D100A7",
+      "at": "f:2565",
+      "look": ""
+    },
+    {
+      "shot": "D100A8",
+      "at": "f:2610",
+      "look": ""
+    },
+    {
+      "shot": "D100A9",
+      "at": "f:2655",
+      "look": ""
+    },
+    {
+      "shot": "D200C",
+      "at": "f:2700",
+      "look": ""
+    },
+    {
+      "shot": "D200A1",
+      "at": "f:2745",
+      "look": ""
+    },
+    {
+      "shot": "D200A2",
+      "at": "f:2790",
+      "look": ""
+    },
+    {
+      "shot": "D200A3",
+      "at": "f:2835",
+      "look": ""
+    },
+    {
+      "shot": "D200A4",
+      "at": "f:2880",
+      "look": ""
+    },
+    {
+      "shot": "D200A5",
+      "at": "f:2925",
+      "look": ""
+    },
+    {
+      "shot": "D200A6",
+      "at": "f:2970",
+      "look": ""
+    },
+    {
+      "shot": "D200A7",
+      "at": "f:3015",
+      "look": ""
+    },
+    {
+      "shot": "D200A8",
+      "at": "f:3060",
+      "look": ""
+    },
+    {
+      "shot": "D200A9",
+      "at": "f:3105",
+      "look": ""
+    },
+    {
+      "shot": "D365C",
+      "at": "f:3150",
+      "look": ""
+    },
+    {
+      "shot": "D365A1",
+      "at": "f:3195",
+      "look": ""
+    },
+    {
+      "shot": "D365A2",
+      "at": "f:3240",
+      "look": ""
+    },
+    {
+      "shot": "D365A3",
+      "at": "f:3285",
+      "look": ""
+    },
+    {
+      "shot": "D365A4",
+      "at": "f:3330",
+      "look": ""
+    },
+    {
+      "shot": "D365A5",
+      "at": "f:3375",
+      "look": ""
+    },
+    {
+      "shot": "D365A6",
+      "at": "f:3420",
+      "look": ""
+    },
+    {
+      "shot": "D365A7",
+      "at": "f:3465",
+      "look": ""
+    },
+    {
+      "shot": "D365A8",
+      "at": "f:3510",
+      "look": ""
+    },
+    {
+      "shot": "D365A9",
+      "at": "f:3555",
+      "look": ""
+    }
+  ],
+  "fx": [
+    {
+      "kind": "flash",
+      "at": "f:0",
+      "color": "#FFD9A0",
+      "o": 0.7
+    },
+    {
+      "kind": "flash",
+      "at": "f:150",
+      "color": "#FFB15C",
+      "o": 0.55
+    },
+    {
+      "kind": "flash",
+      "at": "f:540",
+      "color": "#FFB15C",
+      "o": 0.55
+    },
+    {
+      "kind": "flash",
+      "at": "f:900",
+      "color": "#FFB15C",
+      "o": 0.55
+    },
+    {
+      "kind": "flash",
+      "at": "f:1350",
+      "color": "#FFB15C",
+      "o": 0.55
+    },
+    {
+      "kind": "flash",
+      "at": "f:1800",
+      "color": "#FFB15C",
+      "o": 0.55
+    },
+    {
+      "kind": "flash",
+      "at": "f:2250",
+      "color": "#FFB15C",
+      "o": 0.55
+    },
+    {
+      "kind": "flash",
+      "at": "f:2700",
+      "color": "#FFB15C",
+      "o": 0.55
+    },
+    {
+      "kind": "flash",
+      "at": "f:3150",
+      "color": "#FFB15C",
+      "o": 0.55
+    },
+    {
+      "kind": "shake",
+      "at": "f:1010",
+      "len": 12,
+      "amp": 16
+    },
+    {
+      "kind": "shake",
+      "at": "f:1120",
+      "len": 10,
+      "amp": 12
+    },
+    {
+      "kind": "shake",
+      "at": "f:2430",
+      "len": 12,
+      "amp": 14
+    },
+    {
+      "kind": "flash",
+      "at": "f:3440",
+      "color": "#E2A24A",
+      "o": 0.5
+    }
+  ],
+  "end": "f:3600",
+  "audio": {
+    "voice": "besi-hilang/voice.mp3",
+    "sfx": "besi-hilang/sfx.mp3",
+    "music": "besi-hilang/music.mp3",
+    "voiceVol": 0.92,
+    "sfxVol": 0.55,
+    "musicVol": 0.14
+  }
+}
