@@ -58,6 +58,46 @@ const Grain = () => (
   />
 );
 
+const FLASH_COLORS = [RUST, INK, SAGE, GOLD];
+
+const KineticWash = ({frame}: {frame: number}) => {
+  const x = Math.sin(frame * 0.075) * 260;
+  const y = Math.cos(frame * 0.055) * 180;
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none', opacity: 0.55}}>
+      <AbsoluteFill
+        style={{
+          background:
+            'linear-gradient(115deg, transparent 28%, rgba(180,71,47,0.30) 43%, rgba(214,161,59,0.24) 50%, rgba(96,116,93,0.28) 58%, transparent 74%)',
+          transform: `translateX(${x}px)`,
+        }}
+      />
+      <AbsoluteFill
+        style={{
+          background: 'radial-gradient(circle at 50% 50%, rgba(33,29,24,0.18) 0, transparent 40%)',
+          transform: `translate(${y}px, ${x * 0.35}px)`,
+        }}
+      />
+    </AbsoluteFill>
+  );
+};
+
+const BeatFlash = ({frame}: {frame: number}) => {
+  const phase = (frame - 12) % 72;
+  if (phase < 0 || phase > 3) return null;
+  const alpha = 0.72 * (1 - phase / 4);
+  const index = Math.floor(Math.max(0, frame - 12) / 72) % FLASH_COLORS.length;
+  return (
+    <AbsoluteFill
+      style={{
+        background: FLASH_COLORS[index],
+        opacity: alpha,
+        pointerEvents: 'none',
+      }}
+    />
+  );
+};
+
 const PaperBackground = ({frame}: {frame: number}) => {
   const warmth = between(frame, 0, 160, 0.06, 0.12);
   return (
@@ -603,8 +643,9 @@ const Video = () => {
   const frame = useCurrentFrame();
   return (
     <AbsoluteFill style={{background: PAPER}}>
-      <PaperBackground frame={frame} />
       <Audio src={staticFile('audio/mix.mp3')} />
+      <PaperBackground frame={frame} />
+      <KineticWash frame={frame} />
       {timing.scenes.map((scene) => {
         const start = Math.round(scene.start * FPS);
         const duration = Math.round((scene.end - scene.start) * FPS);
@@ -616,6 +657,7 @@ const Video = () => {
       })}
       <Captions frame={frame} />
       <Grain />
+      <BeatFlash frame={frame} />
     </AbsoluteFill>
   );
 };
