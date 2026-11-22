@@ -11,8 +11,7 @@ from scipy.io import wavfile
 from scipy.signal import butter, sosfilt
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL_SOUND = Path("/home/putera/.agents/skills/video-sound")
-SKILL_SFX = Path("/home/putera/.agents/skills/motion-sound-design")
+VENDOR = ROOT / "tools/vendor"
 VOICE_META = ROOT / "sound/vo/voice_meta.json"
 WORDS_FILE = ROOT / "sound/vo/words.json"
 SFX_LIB = ROOT / "sound/sfx_lib"
@@ -142,7 +141,7 @@ def main():
     make_room(8.0)
 
     if not any(SFX_LIB.glob("*.wav")):
-        subprocess.run([sys.executable, str(SKILL_SFX / "scripts/sfx.py"), "synth", str(SFX_LIB)], check=True)
+        subprocess.run([sys.executable, str(VENDOR / "sfx.py"), "synth", str(SFX_LIB)], check=True)
 
     copies = {
         "tick_1.wav": "tick.wav",
@@ -200,7 +199,7 @@ def main():
     }, indent=2) + "\n")
 
     subprocess.run([
-        sys.executable, str(SKILL_SOUND / "scripts/sound.py"),
+        sys.executable, str(VENDOR / "sound.py"),
         "mix", str(CUES), "-o", str(MIX_WAV),
     ], check=True)
     subprocess.run([
@@ -209,7 +208,7 @@ def main():
     ], check=True)
 
     check = subprocess.run([
-        sys.executable, str(SKILL_SOUND / "scripts/sound.py"),
+        sys.executable, str(VENDOR / "sound.py"),
         "check", str(MIX_WAV), "--cues", str(CUES),
     ], capture_output=True, text=True)
     (ROOT / "sound/check.json").write_text(check.stdout or check.stderr)
