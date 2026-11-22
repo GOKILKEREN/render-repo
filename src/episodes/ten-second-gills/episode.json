@@ -1,0 +1,132 @@
+{
+ "id": "TenSecondGills",
+ "slug": "ten-second-gills",
+ "topic": "What if humans could breathe underwater, but only for ten seconds?",
+ "title": ["WHAT IF YOU COULD", "BREATHE UNDERWATER?"],
+ "accent": "BREATHE",
+ "power": {
+  "word": "Breathe.",
+  "rule": "you can breathe underwater, but every breath runs out after exactly ten seconds",
+  "look": "three cyan gill slits at the neck, a cooling blue grade, a BREATHE chip and a wrist dial counting 10 to 0"
+ },
+ "script": [
+  {"beat": "1 cold open, demo 1 (small and selfish)", "text": "You dive. Breathe. Fish scatter."},
+  {"beat": "1 cold open, demo 2 (useful)", "text": "Grab a coin. Breathe. Still under."},
+  {"beat": "1 cold open, demo 3 (a little uncanny)", "text": "Race your friend. Breathe. He stops at ten."},
+  {"beat": "2 the premise (title card)", "text": "What if you could breathe underwater, ten seconds at a time?"},
+  {"beat": "4 the turn: the cost, one real fact", "text": "One catch: a liter of water holds about nine milligrams of oxygen. Even with perfect gills, you need forty liters a minute. That's real."},
+  {"beat": "5-7 folded into a threat", "text": "So what happens at second eleven?"}
+ ],
+ "science": [
+  {
+   "claim": "A liter of air-saturated freshwater at 20 °C holds about nine milligrams of dissolved oxygen.",
+   "working": "Published saturation values at 20 °C and sea level: 9.06 mg/L (Wisconsin DNR DO table), 9.077 mg/L (FAO/EIFAC table), 9.1 ppm (NC State Extension). Rounded to about 9 mg/L in the script and on the schematic.",
+   "source": "Wisconsin DNR, BOD101 DO saturation table; FAO, Water Quality & Aquaculture manual, Table I (EIFAC 1986); NC State Extension, Dissolved Oxygen Saturation in Fresh Water"
+  },
+  {
+   "claim": "A resting adult uses about 250 milliliters of oxygen a minute, so even with perfect gills you would need roughly forty liters of water a minute.",
+   "working": "Resting oxygen consumption: 200-250 mL/min (ACE, 2018) and 250-350 mL/min (Dominelli et al., 2021); use 250 mL/min. At STP, 1 mol of gas is 22.4 L, so 0.250/22.4 = 0.0112 mol O2/min = 0.0112 x 32 g/mol = 0.357 g = 357 mg O2/min. At 9 mg O2/L, 357/9 = 39.7 L of water per minute, assuming 100 percent extraction; real fish gills extract up to about 80 percent, which would require more flow. The schematic states about 40 L/min.",
+   "source": "ACE Fitness, January 2018 (resting 200-250 mL O2/min); Dominelli et al., 2021, PMC8026750 (250-350 mL/min at rest); O2 molar volume 22.4 L/mol; dissolved-oxygen tables above"
+  }
+ ],
+ "cast": ["pipHood", "mo"],
+ "shots": [
+  {"id": "S1", "size": "wide", "set": "shore", "key": 12, "note": "dusk cove: Pip runs in and dives, the low sun in frame"},
+  {"id": "S2", "size": "low angle, medium", "set": "reef", "key": 12, "note": "underwater, Pip glides down through a shaft of sun; gill slits glow, bubbles rise"},
+  {"id": "S3", "size": "high angle, medium", "set": "reef", "key": 15, "note": "a school of silver fish scatters above his head"},
+  {"id": "S4", "size": "macro insert", "set": "reef (seabed)", "key": 16, "note": "an old gold coin half-buried in sand; a mitten grabs it"},
+  {"id": "S5", "size": "medium", "set": "reef", "key": 26, "note": "Pip holds up the coin, grinning; the wrist dial counts down"},
+  {"id": "S6", "size": "wide, tracking", "set": "reef", "key": 18, "note": "Pip and Mo race across the reef, Pip a length ahead"},
+  {"id": "S7", "size": "close-up", "set": "reef", "key": 34, "note": "Mo stops dead as his dial hits zero; Pip streaks past blurred"},
+  {"id": "S8", "size": "title, wide", "set": "shore", "key": 30, "note": "the premise over the cove at dusk; Pip surfaces with the coin"},
+  {"id": "S9", "size": "insert, low", "set": "reef (wrist)", "key": 28, "note": "the wrist dial snaps from 10 to 0, then resets to 10"},
+  {"id": "S10", "size": "schematic, wide", "set": "schematic", "key": 42, "note": "a one-liter glass of water on a blueprint grid, with nine tiny oxygen dots"},
+  {"id": "S11", "size": "macro insert, top-down", "set": "schematic", "key": 30, "note": "a label reads 9 mg O2 per liter; the dots drift in the glass"},
+  {"id": "S12", "size": "schematic, dial", "set": "schematic", "key": 55, "note": "lungs pull 250 mL O2 a minute; forty liters of water per minute counts up"},
+  {"id": "S13", "size": "extreme close-up", "set": "reef", "key": 12, "note": "Pip, worried; the blue light turns cold, his gills flicker"},
+  {"id": "S14", "size": "wide, low angle", "set": "reef", "key": 40, "note": "the sun shafts die, a long shadow moves in the dark beyond him"}
+ ],
+ "edit": [
+  {"shot": "S1", "at": "f:0"},
+  {"shot": "S2", "at": "Breathe", "look": "breathe"},
+  {"shot": "S3", "at": "Fish"},
+  {"shot": "S4", "at": "Grab"},
+  {"shot": "S5", "at": "Breathe", "look": "breathe"},
+  {"shot": "S6", "at": "Race"},
+  {"shot": "S7", "at": "Breathe", "look": "breathe"},
+  {"shot": "S8", "at": "What"},
+  {"shot": "S9", "at": "ten"},
+  {"shot": "S10", "at": "One"},
+  {"shot": "S11", "at": "nine"},
+  {"shot": "S12", "at": "Even"},
+  {"shot": "S13", "at": "That's"},
+  {"shot": "S14", "at": "So"}
+ ],
+ "tail": 1.0,
+ "fx": [
+   {"at": "S2+17", "kind": "flash", "color": "#BFF3FF", "o": 0.5},
+   {"at": "S5+18", "kind": "flash", "color": "#BFF3FF", "o": 0.4},
+   {"at": "S7+17", "kind": "flash", "color": "#BFF3FF", "o": 0.4},
+  {"at": "S8", "kind": "flash", "color": "#FFF3DC"},
+  {"at": "S9+18", "kind": "flash", "color": "#FF5A6A", "o": 0.35},
+  {"at": "S12+8", "kind": "flash", "color": "#FFB15A", "o": 0.3},
+  {"at": "S14", "kind": "flash", "color": "#FF3344", "o": 0.6},
+   {"at": "S14", "kind": "shake", "len": 12, "amp": 9}
+  ],
+  "sound": {
+   "clips": {
+    "shore_surf": ["gentle evening surf on a quiet cove beach, small waves and a faint breeze, no voices", 6.0],
+    "underwater_tone": ["soft underwater ambience, gentle water rumble and distant bubbles, no voices", 20.0],
+    "bubble": ["a small stream of underwater bubbles rising and popping, short", 0.9],
+    "fall_whoosh": ["a small object falling fast through the air, short soft whoosh", 0.6],
+    "gulp": ["a nervous cartoon gulp, short", 0.5],
+    "pop": ["a cartoon speech bubble pop, short and bright", 0.5],
+    "sparkle": ["a short bright magical sparkle twinkle, cartoon", 0.8],
+    "clink": ["a ceramic coffee mug knocked by a hand on a wooden desk, short clink and scrape", 0.7],
+    "catch": ["a hand catching a ceramic mug mid-air, soft slap and thud", 0.5],
+    "counter_tick": ["a fast mechanical counter ticking up rapidly, digits rolling over, getting faster", 1.6],
+    "gasp": ["two young people gasping in surprise at the same moment, cartoon, short", 0.8],
+    "title_boom": ["a cinematic whoosh rising into a deep boom impact", 1.6],
+    "ding": ["a correct answer ding, bright bell chime", 0.8],
+    "drone_hit": ["a dark ominous low drone hit, deep cinematic horror sting", 2.6],
+    "power_down": ["a whole city losing power, a deep electrical power-down whine dropping in pitch into silence", 2.5],
+    "music": ["playful quirky cartoon background music, pizzicato strings, glockenspiel and soft bass, light and curious, 110 bpm, no vocals", 17.0]
+   },
+    "events": [
+     ["S1", "shore_surf", 0.05, "onset", "S2"],
+     ["S1+23", "fall_whoosh", 0.2, "peak"],
+     ["S1+25", "gulp", 0.2],
+     ["S2", "underwater_tone", 0.1, "onset", "f:660"],
+     ["S2+17", "sparkle", 0.35],
+     ["S3+22", "fall_whoosh", 0.25, "peak"],
+     ["S3+24", "bubble", 0.18],
+     ["S5+1", "clink", 0.08],
+     ["S5+3", "catch", 0.1],
+     ["S5+18", "sparkle", 0.2],
+     ["S5+45", "counter_tick", 0.12, "onset", "S5+51"],
+     ["S5+20", "bubble", 0.14],
+     ["S6+26", "fall_whoosh", 0.22, "peak"],
+     ["S6+28", "bubble", 0.16],
+     ["S7+17", "sparkle", 0.2],
+     ["S7+63", "pop", 0.12],
+     ["S8", "title_boom", 0.35, "peak"],
+     ["S8", "shore_surf", 0.06, "onset", "S9"],
+     ["S9+37", "counter_tick", 0.2, "onset", "S9+43"],
+     ["S9+40", "bubble", 0.2],
+     ["S10+21", "bubble", 0.1],
+     ["S11+45", "sparkle", 0.2],
+     ["S12+12", "counter_tick", 0.14, "onset", "S12+78"],
+     ["S12+83", "ding", 0.18],
+     ["S13+21", "gasp", 0.18],
+     ["S14", "drone_hit", 0.1],
+     ["S14+4", "power_down", 0.03],
+     ["S14+54", "gulp", 0.18]
+    ],
+    "repeats": [
+     {"at": "S2+6", "clip": "bubble", "n": 5, "every": 4, "gain": [0.04, 0.09], "pitch": [0.85, 1.2]},
+     {"at": "S14+54", "clip": "bubble", "n": 6, "every": 5, "gain": [0.04, 0.09], "pitch": [0.8, 1.15]}
+    ],
+   "music": {"clip": "music", "until": "S10"},
+   "levels": {"sfx_lu": -3.0, "music_lu": -11.0}
+  }
+}

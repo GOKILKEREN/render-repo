@@ -1,0 +1,308 @@
+{
+ "slug": "ten-second-gills",
+ "title": "WHAT IF YOU COULD BREATHE UNDERWATER?",
+ "fps": 30,
+ "total": 670,
+ "segments": [
+  {
+   "shot": "S1",
+   "a": 0,
+   "b": 26,
+   "t0": 0,
+   "t1": 26,
+   "line": "You dive."
+  },
+  {
+   "shot": "S2",
+   "a": 26,
+   "b": 50,
+   "t0": 0,
+   "t1": 24,
+   "line": "Breathe.",
+   "look": "breathe"
+  },
+  {
+   "shot": "S3",
+   "a": 50,
+   "b": 79,
+   "t0": 0,
+   "t1": 29,
+   "line": "Fish scatter."
+  },
+  {
+   "shot": "S4",
+   "a": 79,
+   "b": 107,
+   "t0": 0,
+   "t1": 28,
+   "line": "Grab a coin."
+  },
+  {
+   "shot": "S5",
+   "a": 107,
+   "b": 159,
+   "t0": 0,
+   "t1": 52,
+   "line": "Breathe. Still under.",
+   "look": "breathe"
+  },
+  {
+   "shot": "S6",
+   "a": 159,
+   "b": 192,
+   "t0": 0,
+   "t1": 33,
+   "line": "Race your friend."
+  },
+  {
+   "shot": "S7",
+   "a": 192,
+   "b": 256,
+   "t0": 0,
+   "t1": 64,
+   "line": "Breathe. He stops at ten.",
+   "look": "breathe"
+  },
+  {
+   "shot": "S8",
+   "a": 256,
+   "b": 308,
+   "t0": 0,
+   "t1": 52,
+   "line": "What if you could breathe underwater,"
+  },
+  {
+   "shot": "S9",
+   "a": 308,
+   "b": 357,
+   "t0": 0,
+   "t1": 49,
+   "line": "ten seconds at a time?"
+  },
+  {
+   "shot": "S10",
+   "a": 357,
+   "b": 429,
+   "t0": 0,
+   "t1": 72,
+   "line": "One catch: a liter of water holds about"
+  },
+  {
+   "shot": "S11",
+   "a": 429,
+   "b": 481,
+   "t0": 0,
+   "t1": 52,
+   "line": "nine milligrams of oxygen."
+  },
+  {
+   "shot": "S12",
+   "a": 481,
+   "b": 571,
+   "t0": 0,
+   "t1": 90,
+   "line": "Even with perfect gills, you need forty liters a minute."
+  },
+  {
+   "shot": "S13",
+   "a": 571,
+   "b": 596,
+   "t0": 0,
+   "t1": 25,
+   "line": "That's real."
+  },
+  {
+   "shot": "S14",
+   "a": 596,
+   "b": 670,
+   "t0": 0,
+   "t1": 74,
+   "line": "So what happens at second eleven?"
+  }
+ ],
+ "shots": [
+  {
+   "id": "S1",
+   "size": "wide",
+   "key": 12,
+   "len": 26,
+   "first": 0,
+   "line": "You dive.",
+   "note": "dusk cove: Pip runs in and dives, the low sun in frame"
+  },
+  {
+   "id": "S2",
+   "size": "low angle, medium",
+   "key": 12,
+   "len": 24,
+   "first": 26,
+   "line": "Breathe.",
+   "note": "underwater, Pip glides down through a shaft of sun; gill slits glow, bubbles rise"
+  },
+  {
+   "id": "S3",
+   "size": "high angle, medium",
+   "key": 15,
+   "len": 29,
+   "first": 50,
+   "line": "Fish scatter.",
+   "note": "a school of silver fish scatters above his head"
+  },
+  {
+   "id": "S4",
+   "size": "macro insert",
+   "key": 16,
+   "len": 28,
+   "first": 79,
+   "line": "Grab a coin.",
+   "note": "an old gold coin half-buried in sand; a mitten grabs it"
+  },
+  {
+   "id": "S5",
+   "size": "medium",
+   "key": 26,
+   "len": 52,
+   "first": 107,
+   "line": "Breathe. Still under.",
+   "note": "Pip holds up the coin, grinning; the wrist dial counts down"
+  },
+  {
+   "id": "S6",
+   "size": "wide, tracking",
+   "key": 18,
+   "len": 33,
+   "first": 159,
+   "line": "Race your friend.",
+   "note": "Pip and Mo race across the reef, Pip a length ahead"
+  },
+  {
+   "id": "S7",
+   "size": "close-up",
+   "key": 34,
+   "len": 64,
+   "first": 192,
+   "line": "Breathe. He stops at ten.",
+   "note": "Mo stops dead as his dial hits zero; Pip streaks past blurred"
+  },
+  {
+   "id": "S8",
+   "size": "title, wide",
+   "key": 30,
+   "len": 52,
+   "first": 256,
+   "line": "What if you could breathe underwater,",
+   "note": "the premise over the cove at dusk; Pip surfaces with the coin"
+  },
+  {
+   "id": "S9",
+   "size": "insert, low",
+   "key": 28,
+   "len": 49,
+   "first": 308,
+   "line": "ten seconds at a time?",
+   "note": "the wrist dial snaps from 10 to 0, then resets to 10"
+  },
+  {
+   "id": "S10",
+   "size": "schematic, wide",
+   "key": 42,
+   "len": 72,
+   "first": 357,
+   "line": "One catch: a liter of water holds about",
+   "note": "a one-liter glass of water on a blueprint grid, with nine tiny oxygen dots"
+  },
+  {
+   "id": "S11",
+   "size": "macro insert, top-down",
+   "key": 30,
+   "len": 52,
+   "first": 429,
+   "line": "nine milligrams of oxygen.",
+   "note": "a label reads 9 mg O2 per liter; the dots drift in the glass"
+  },
+  {
+   "id": "S12",
+   "size": "schematic, dial",
+   "key": 55,
+   "len": 90,
+   "first": 481,
+   "line": "Even with perfect gills, you need forty liters a minute.",
+   "note": "lungs pull 250 mL O2 a minute; forty liters of water per minute counts up"
+  },
+  {
+   "id": "S13",
+   "size": "extreme close-up",
+   "key": 12,
+   "len": 25,
+   "first": 571,
+   "line": "That's real.",
+   "note": "Pip, worried; the blue light turns cold, his gills flicker"
+  },
+  {
+   "id": "S14",
+   "size": "wide, low angle",
+   "key": 40,
+   "len": 74,
+   "first": 596,
+   "line": "So what happens at second eleven?",
+   "note": "the sun shafts die, a long shadow moves in the dark beyond him"
+  }
+ ],
+ "fx": [
+  {
+   "kind": "flash",
+   "color": "#BFF3FF",
+   "o": 0.5,
+   "f": 43
+  },
+  {
+   "kind": "flash",
+   "color": "#BFF3FF",
+   "o": 0.4,
+   "f": 125
+  },
+  {
+   "kind": "flash",
+   "color": "#BFF3FF",
+   "o": 0.4,
+   "f": 209
+  },
+  {
+   "kind": "flash",
+   "color": "#FFF3DC",
+   "f": 256
+  },
+  {
+   "kind": "flash",
+   "color": "#FF5A6A",
+   "o": 0.35,
+   "f": 326
+  },
+  {
+   "kind": "flash",
+   "color": "#FFB15A",
+   "o": 0.3,
+   "f": 489
+  },
+  {
+   "kind": "flash",
+   "color": "#FF3344",
+   "o": 0.6,
+   "f": 596
+  },
+  {
+   "kind": "shake",
+   "len": 12,
+   "amp": 9,
+   "f": 596
+  }
+ ],
+ "audio": {
+  "voiceVol": 0.8,
+  "sfxVol": 0.5999,
+  "musicVol": 0.1055,
+  "voice": "ten-second-gills/voice.wav",
+  "sfx": "ten-second-gills/sfx.wav",
+  "music": "ten-second-gills/music.wav"
+ }
+}
