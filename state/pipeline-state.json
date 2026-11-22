@@ -1,0 +1,76 @@
+{
+  "pipeline_version": "1.0",
+  "created_at": null,
+  "updated_at": null,
+  "user_goal": null,
+  "constraints": {
+    "target_length_seconds": null,
+    "platform": null,
+    "tone": null,
+    "deadline": null
+  },
+  "current_stage": "not_started",
+  "stage_order": [
+    "research",
+    "creative",
+    "production",
+    "qa"
+  ],
+  "stages": {
+    "research": {
+      "status": "pending",
+      "attempts": 0,
+      "max_attempts": 2,
+      "outputs": [],
+      "last_run_at": null,
+      "notes": null
+    },
+    "creative": {
+      "status": "pending",
+      "attempts": 0,
+      "max_attempts": 3,
+      "outputs": [],
+      "last_run_at": null,
+      "notes": null
+    },
+    "production": {
+      "status": "pending",
+      "attempts": 0,
+      "max_attempts": 3,
+      "outputs": [],
+      "last_run_at": null,
+      "notes": null
+    },
+    "qa": {
+      "status": "pending",
+      "attempts": 0,
+      "max_attempts": 5,
+      "outputs": [],
+      "last_run_at": null,
+      "notes": null
+    }
+  },
+  "qa_history": [],
+  "quality_thresholds": {
+    "minimum_per_dimension": 75,
+    "minimum_average": 85,
+    "hard_fail_dimensions": [
+      "Facts",
+      "Rendering"
+    ]
+  },
+  "regeneration_targets": [],
+  "total_pipeline_attempts": 0,
+  "max_total_pipeline_attempts": 12,
+  "human_checkpoints": {
+    "before_first_render": {
+      "required": true,
+      "cleared": false
+    },
+    "before_final_export": {
+      "required": true,
+      "cleared": false
+    }
+  },
+  "log": []
+}

@@ -1,0 +1,10 @@
+node_modules/
+out/
+sound/mix.wav
+sound/mix_stems/
+sound/music/
+sound/sfx/
+sound/sfx_lib/
+sound/vo/voice.wav
+public/audio/voice_raw.mp3
+*.log

@@ -1,0 +1,30 @@
+{
+ "out": "/home/putera/animation/my-project/sound/mix.wav",
+ "stems": "/home/putera/animation/my-project/sound/mix_stems",
+ "platform": "youtube",
+ "target_lufs": -14,
+ "target_tp": -1.0,
+ "pre_master": {
+  "lufs": -23.94,
+  "true_peak": -6.61
+ },
+ "master_gain_db": 9.94,
+ "final": {
+  "lufs": -14.29,
+  "true_peak": -1.49,
+  "lra": 4.4
+ },
+ "voice_windows": [
+  [
+   0.0,
+   111.08
+  ]
+ ],
+ "duck": {
+  "depth_db": 12.0,
+  "down_s": 0.25,
+  "up_s": 0.25,
+  "carve": "lows 35%, 300 Hz-4 kHz 100%, highs 65% of the depth"
+ },
+ "note": "stems are pre-master; apply master_gain_db to compare them with the mix"
+}
