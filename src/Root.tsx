@@ -4,6 +4,8 @@ import './engine/fonts';
 import { STUDIO } from './studio.config';
 import { EPISODES } from './episodes';
 import { CastSheet } from './CastSheet';
+import { Friends3DMain } from './episodes/friends-3d';
+import { useFriends3DFrames } from './episodes/friends-3d/durations';
 
 // Every episode gets two compositions: <Id> (the film) and <Id>Board (one frame per shot, at its key frame, for the
 // storyboard). Cast renders the cast sheet.
@@ -11,6 +13,9 @@ import { CastSheet } from './CastSheet';
 
 export const Root: React.FC = () => {
   const common = { width: STUDIO.width, height: STUDIO.height, fps: STUDIO.fps };
+  const friendsFrames = useFriends3DFrames();
+  const friendsDuration = friendsFrames?.reduce((sum, value) => sum + value, 0) ?? 1;
+  const FriendsFilm: React.FC = () => <Friends3DMain frames={friendsFrames ?? []} />;
   return (
     <>
       {EPISODES.map((e) => (
@@ -33,6 +38,16 @@ export const Root: React.FC = () => {
           />
         </React.Fragment>
       ))}
+      {friendsFrames ? (
+        <Composition
+          id="Friends3D"
+          component={FriendsFilm}
+          durationInFrames={friendsDuration}
+          fps={common.fps}
+          width={1080}
+          height={1920}
+        />
+      ) : null}
       <Composition id="Cast" component={CastSheet} durationInFrames={1} {...common} />
     </>
   );
