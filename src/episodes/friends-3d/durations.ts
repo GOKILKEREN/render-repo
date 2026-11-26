@@ -1,10 +1,11 @@
 import {useEffect, useRef, useState} from 'react';
-import {continueRender, delayRender, staticFile, useVideoConfig} from 'remotion';
+import {continueRender, delayRender, staticFile} from 'remotion';
 import {getAudioDurationInSeconds} from '@remotion/media-utils';
+import {STUDIO} from '../../studio.config';
 import {SCENES, TARGET_DURATION_SECONDS} from './sceneSpec';
 
 export const useFriends3DFrames = () => {
-  const {fps} = useVideoConfig();
+  const fps = STUDIO.fps;
   const [frames, setFrames] = useState<number[] | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const handle = useRef<number | null>(null);
