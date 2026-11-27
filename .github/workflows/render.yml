@@ -13,8 +13,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - run: python3 tools/prepare_friends_vo.py
-      - run: npx remotion render src/index.ts Friends3D out/video-raw.mp4 --concurrency=2 --gl=swangle
+      - run: python3 tools/prepare_deaf_vo.py
+      - run: npx remotion render src/index.ts Deaf3D out/video-raw.mp4 --concurrency=2 --gl=swangle
       - run: ffmpeg -y -i out/video-raw.mp4 -c:v copy -af "loudnorm=I=-14:TP=-1.5:LRA=11" -c:a aac -b:a 192k -movflags +faststart out/video.mp4
       - uses: actions/upload-artifact@v4
         with:
