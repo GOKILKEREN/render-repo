@@ -1,0 +1,511 @@
+<!doctype html>
+<!-- Bulan Hilang Setahun: Ini yang Terjadi di Bumi · fabriqué par claude-code-ai-video (style blanc) -->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Bulan Hilang Setahun: Ini yang Terjadi di Bumi</title>
+    <script src="gsap.min.js"></script>
+    <style>
+/* Le style blanc : fond blanc chaud, taches pastel très floues que le verre dépoli laisse deviner, une idée par écran,
+   quelques mots en grand, pas de contour noir ni d'ombre dure. Inter pour le texte, Instrument Serif italique pour
+   le mot fort, une seule couleur d'accent. Les couleurs se changent dans video.json (« couleurs »). */
+@font-face { font-family: "Inter"; src: url("fonts/Inter.ttf") format("truetype"); font-weight: 100 900; }
+@font-face { font-family: "Instrument Serif"; src: url("fonts/InstrumentSerif-Italic.ttf") format("truetype"); font-style: italic; font-weight: 400; }
+:root {
+  --fond: #f7f6f3; --encre: #111216; --gris: #6b6f76; --gris-2: #a6aab1; --gris-3: #d9d7d2; --squelette: #e9e6e0;
+  --accent: #f26b1d; --accent-2: #ff9b42; --vert: #12a150; --rouge: #e5484d; --ambre: #f59e0b; --bleu: #3b82f6;
+  --verre: linear-gradient(150deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.5));
+  --ombre: 0 44px 90px -28px rgba(28, 34, 56, 0.26), 0 14px 34px -14px rgba(28, 34, 56, 0.14);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--fond); }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--fond); color: var(--encre);
+  font-family: "Inter", sans-serif; font-feature-settings: "ss01", "cv11"; -webkit-font-smoothing: antialiased; }
+#film { position: absolute; inset: 0; overflow: hidden; }
+#fond, .fond-scene { position: absolute; inset: 0; overflow: hidden; background: var(--fond); }
+.tache { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.55; }
+#rush { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+
+.scene { position: absolute; inset: 0; visibility: hidden; }
+.cam, .zoom { position: absolute; inset: 0; transform-origin: 540px 990px; }
+.abs { position: absolute; }
+.centre { display: flex; align-items: center; justify-content: center; text-align: center; }
+.acc { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; font-size: 1.16em; line-height: 0.9;
+  background: linear-gradient(120deg, var(--accent) 10%, var(--accent-2) 95%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding: 0.08em 0.14em 0.12em; margin: -0.08em -0.07em -0.12em; display: inline-block; }
+.l { white-space: pre-wrap; }
+
+/* le verre dépoli */
+.verre { position: absolute; background: var(--verre); border: 1.5px solid rgba(255, 255, 255, 0.92); border-radius: 44px;
+  backdrop-filter: blur(30px) saturate(170%); -webkit-backdrop-filter: blur(30px) saturate(170%);
+  box-shadow: var(--ombre), inset 0 1px 0 rgba(255, 255, 255, 0.96); }
+.verre.rond { border-radius: 50%; }
+.pilule { display: flex; align-items: center; gap: 16px; padding: 0 34px 0 24px; border-radius: 999px; font-size: 36px; font-weight: 700; letter-spacing: -0.02em; white-space: nowrap; }
+.etiq { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gris); }
+.mention { position: absolute; font-size: 26px; font-weight: 600; letter-spacing: 0.04em; color: var(--gris-2); }
+svg.ic { display: block; overflow: visible; }
+svg.ic .t { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+.squel { height: 22px; border-radius: 11px; background: var(--squelette); margin-top: 18px; }
+
+/* les visuels : tuile de logo, d'icône ou d'emoji */
+.tuile { display: flex; align-items: center; justify-content: center; border-radius: 26%; background: linear-gradient(160deg, #ffffff, #f1eee8);
+  box-shadow: 0 30px 60px -22px rgba(28, 34, 56, 0.32), 0 10px 22px -10px rgba(28, 34, 56, 0.16), inset 0 1px 0 #fff; overflow: hidden; }
+.tuile.ic-t { background: linear-gradient(140deg, var(--accent-2), var(--accent)); color: #fff; }
+.tuile img { width: 100%; height: 100%; object-fit: cover; }
+.emoji { line-height: 1; }
+
+/* les sous-titres : quelques mots, au centre du haut, le mot fort en italique orange */
+#legendes { position: absolute; left: 56px; right: 56px; top: 250px; height: 270px; z-index: 30; pointer-events: none; }
+.cap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; align-content: center;
+  text-align: center; visibility: hidden; font-weight: 800; letter-spacing: -0.045em; line-height: 1.04; column-gap: 0.24em; }
+.cap .w { display: inline-block; }
+.cap.bas { top: 920px; }
+.cap.bas .w { color: #fff; text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.6); }
+.cap.bas .acc { text-shadow: none; filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45)); }
+
+/* la marque, petite, en bas à gauche ; la carte de fin */
+#marque { position: absolute; left: 72px; top: 1436px; height: 72px; z-index: 40; font-size: 31px; gap: 12px; padding: 0 28px 0 12px; }
+#fin .fin-t { font-size: 76px; font-weight: 800; letter-spacing: -0.045em; }
+#fin .fin-s { font-size: 40px; font-weight: 600; color: var(--gris); letter-spacing: -0.02em; }
+
+/* titre, chiffre */
+.titre { text-align: center; font-weight: 800; letter-spacing: -0.05em; line-height: 1.04; }
+.titre .tl { display: block; }
+.sous { font-size: 40px; font-weight: 600; color: var(--gris); letter-spacing: -0.02em; }
+.nombre { font-weight: 800; letter-spacing: -0.05em; }
+.nombre { color: var(--encre); }
+.nombre.fort { color: var(--accent); }
+.apres { font-size: 64px; font-weight: 800; letter-spacing: -0.04em; }
+.odo { display: inline-flex; align-items: flex-start; }
+.odo .col { position: relative; overflow: hidden; display: inline-block; }
+.odo .rouleau { position: absolute; left: 0; top: 0; display: flex; flex-direction: column; }
+.odo .rouleau span, .odo .fixe { display: block; text-align: center; }
+
+/* liste, étapes */
+.ligne { display: flex; align-items: center; gap: 30px; padding: 0 40px 0 22px; border-radius: 40px; font-weight: 700; letter-spacing: -0.025em; overflow: hidden; }
+.ligne-on { position: absolute; left: 0; top: 0; bottom: 0; width: 10px; background: linear-gradient(180deg, var(--accent-2), var(--accent)); opacity: 0; }
+.ligne-t { line-height: 1.12; }
+.ligne-n, .numero { flex: none; border-radius: 50%; color: #fff; font-weight: 800; letter-spacing: -0.04em;
+  background: linear-gradient(140deg, var(--accent-2), var(--accent)); box-shadow: 0 24px 50px -18px rgba(242, 107, 29, 0.55), inset 0 2px 0 rgba(255, 255, 255, 0.35); }
+.numero { position: absolute; }
+.etape { display: flex; flex-direction: column; justify-content: center; }
+.etape-t { font-size: 54px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.08; }
+.etape-d { font-size: 34px; font-weight: 500; color: var(--gris); margin-top: 10px; line-height: 1.25; }
+
+/* duel */
+.duel { flex-direction: column; gap: 26px; padding: 40px 34px; border-radius: 48px; }
+.duel-t { font-size: 50px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
+.duel-x { font-size: 32px; font-weight: 500; color: var(--gris); line-height: 1.3; }
+.duel .barre path { fill: none; stroke: var(--rouge); stroke-width: 9; stroke-linecap: round; opacity: 0; }
+.vs { position: absolute; border-radius: 50%; background: var(--encre); color: #fff; font-size: 42px; font-weight: 800; letter-spacing: -0.03em;
+  box-shadow: 0 24px 50px -16px rgba(17, 18, 22, 0.5); }
+
+/* logos */
+.centre-txt { font-size: 46px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; padding: 30px; }
+.nom { font-size: 30px; font-weight: 700; color: var(--gris); letter-spacing: -0.02em; }
+
+/* iPhone, navigateur, photo */
+.iphone { position: absolute; }
+.ip-cadre { position: absolute; inset: 0; border-radius: 17.2% / 8.3%; padding: 1.4%;
+  background: linear-gradient(135deg, #c9c9ce 0%, #7a7a80 14%, #3d3d42 38%, #4a4a50 62%, #8a8a90 84%, #d4d4d8 100%);
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.5), inset 0 0 0 3px rgba(0, 0, 0, 0.45), 0 60px 110px -30px rgba(20, 24, 40, 0.45), 0 20px 40px -18px rgba(20, 24, 40, 0.3); }
+.ip-noir { position: relative; width: 100%; height: 100%; border-radius: 16% / 7.7%; background: #050506; padding: 2.6%; }
+.ip-ecran { position: relative; width: 100%; height: 100%; border-radius: 13.6% / 6.5%; overflow: hidden; background: #fff; }
+.ip-ilot { position: absolute; left: 50%; top: 1.7%; width: 31%; height: 4.4%; transform: translateX(-50%); border-radius: 999px; background: #000; z-index: 50; }
+.ip-reflet { position: absolute; inset: 0; z-index: 60; pointer-events: none; border-radius: inherit;
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.05) 26%, rgba(255, 255, 255, 0) 40%); }
+.ip-bouton { position: absolute; width: 1.2%; border-radius: 3px; background: linear-gradient(90deg, #6a6a70, #b8b8be 60%, #707076); }
+.ecran-in { position: absolute; inset: 0; overflow: hidden; }
+.ecran-media { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.nav { overflow: hidden; border-radius: 36px; }
+.nav-barre { height: 78px; display: flex; align-items: center; gap: 12px; padding: 0 28px; border-bottom: 1.5px solid rgba(0, 0, 0, 0.06); background: rgba(255, 255, 255, 0.6); }
+.nav-barre i { width: 18px; height: 18px; border-radius: 50%; background: #e4e1db; }
+.nav-barre i:nth-child(1) { background: #ff6159; } .nav-barre i:nth-child(2) { background: #ffbd2e; } .nav-barre i:nth-child(3) { background: #28c941; }
+.nav-url { flex: 1; margin-left: 18px; height: 46px; border-radius: 23px; background: rgba(0, 0, 0, 0.05); font-size: 26px; font-weight: 500; color: var(--gris);
+  display: flex; align-items: center; padding: 0 22px; white-space: nowrap; overflow: hidden; }
+.nav-corps { position: absolute; left: 0; right: 0; top: 78px; bottom: 0; overflow: hidden; background: #fff; }
+.nav-img { position: absolute; left: 0; top: 0; width: 100%; }
+.nav-page { padding: 50px 56px; }
+.nav-titre { font-size: 56px; font-weight: 800; letter-spacing: -0.045em; line-height: 1.06; }
+.nav-texte { font-size: 34px; font-weight: 500; color: var(--gris); margin: 20px 0 16px; line-height: 1.3; }
+.photo { border-radius: 48px; overflow: hidden; box-shadow: var(--ombre); border: 6px solid rgba(255, 255, 255, 0.95); }
+.photo img, .plein img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.plein { left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
+.plein .voile { position: absolute; left: 0; right: 0; top: 0; height: 700px; background: linear-gradient(180deg, rgba(247, 246, 243, 0.96) 0%, rgba(247, 246, 243, 0.85) 55%, rgba(247, 246, 243, 0) 100%); }
+
+/* chat */
+.chat { overflow: hidden; border-radius: 48px; }
+.chat-tete { height: 110px; display: flex; align-items: center; gap: 20px; padding: 0 36px; font-size: 36px; border-bottom: 1.5px solid rgba(0, 0, 0, 0.06); }
+.chat-tete b { font-weight: 800; letter-spacing: -0.03em; }
+.chat-m { margin-left: auto; font-size: 22px; font-weight: 600; color: var(--gris-2); text-transform: uppercase; letter-spacing: 0.06em; }
+.chat-fil { position: absolute; left: 36px; right: 36px; top: 140px; height: 650px; overflow: hidden; }
+.chat-in { position: absolute; left: 0; right: 0; top: 0; }
+.bulle { position: absolute; max-width: 680px; padding: 20px 28px; border-radius: 34px; font-size: 34px; font-weight: 500; line-height: 1.35; letter-spacing: -0.015em; }
+.bulle.moi { right: 0; background: var(--encre); color: #fff; border-bottom-right-radius: 10px; }
+.bulle.lui { left: 0; background: #fff; box-shadow: 0 10px 30px -14px rgba(28, 34, 56, 0.25); border-bottom-left-radius: 10px; }
+.points { position: absolute; left: 0; display: flex; gap: 10px; padding: 26px 30px; border-radius: 34px; background: #fff; opacity: 0; }
+.points i { width: 14px; height: 14px; border-radius: 50%; background: var(--gris-2); }
+
+/* alerte */
+.alerte { flex-direction: column; gap: 22px; padding: 120px 60px 40px; border-radius: 52px; }
+.al-t { font-size: 62px; font-weight: 800; letter-spacing: -0.045em; line-height: 1.05; }
+.al-x { font-size: 38px; font-weight: 500; color: var(--gris); line-height: 1.3; }
+.pastille-al, .onde-al { position: absolute; border-radius: 50%; }
+.pastille-al { box-shadow: 0 30px 60px -18px rgba(0, 0, 0, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.35); }
+.danger.pastille-al { background: linear-gradient(140deg, #ff8a8a, var(--rouge)); } .danger.onde-al { border: 6px solid var(--rouge); }
+.attention.pastille-al { background: linear-gradient(140deg, #ffd36e, var(--ambre)); } .attention.onde-al { border: 6px solid var(--ambre); }
+.ok.pastille-al { background: linear-gradient(140deg, #6ee7a8, var(--vert)); } .ok.onde-al { border: 6px solid var(--vert); }
+.info.pastille-al { background: linear-gradient(140deg, var(--accent-2), var(--accent)); } .info.onde-al { border: 6px solid var(--accent); }
+
+/* graphique */
+.graph { border-radius: 48px; }
+.g-titre { position: absolute; left: 50px; right: 50px; top: 40px; font-size: 40px; font-weight: 800; letter-spacing: -0.035em; }
+.barre-g { border-radius: 18px 18px 8px 8px; background: var(--gris-3); }
+.barre-g.fort { background: linear-gradient(180deg, var(--accent-2), var(--accent)); box-shadow: 0 20px 40px -16px rgba(242, 107, 29, 0.6); }
+.g-val { font-size: 36px; font-weight: 800; letter-spacing: -0.03em; }
+.g-lab { font-size: 28px; font-weight: 600; color: var(--gris); }
+
+/* terminal */
+.term { position: absolute; border-radius: 36px; background: #15161a; color: #e9e9ec; box-shadow: 0 50px 100px -30px rgba(10, 12, 20, 0.6); overflow: hidden;
+  font-family: "SF Mono", Menlo, "DejaVu Sans Mono", monospace; }
+.term-barre { height: 70px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #1f2026; }
+.term-barre i { width: 16px; height: 16px; border-radius: 50%; background: #3a3b42; }
+.term-barre span { margin-left: 16px; font-size: 22px; color: #8b8d96; font-family: "Inter", sans-serif; font-weight: 600; }
+.term-l { font-size: 34px; padding: 22px 40px 0; white-space: nowrap; overflow: hidden; }
+.term-l b { color: var(--accent-2); margin-right: 10px; }
+
+/* citation, carte */
+.guillemet { font-family: "Instrument Serif", serif; font-style: italic; font-size: 300px; line-height: 1; color: var(--accent); }
+.cite { flex-wrap: wrap; align-content: center; column-gap: 0.25em; font-family: "Instrument Serif", serif; font-style: italic; line-height: 1.1; letter-spacing: -0.01em; }
+.cite .acc { font-size: 1em; }
+.carte { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; padding: 50px 60px; text-align: center; border-radius: 52px; }
+.carte-t { font-size: 62px; font-weight: 800; letter-spacing: -0.045em; line-height: 1.05; }
+.carte-x { font-size: 36px; font-weight: 500; color: var(--gris); line-height: 1.3; }
+.carte-p { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 10px; }
+.mini { display: inline-flex; align-items: center; height: 64px; padding: 0 26px; border-radius: 32px; background: rgba(17, 18, 22, 0.06); font-size: 28px; font-weight: 700; }
+
+:root { --accent: #4f6bff; --accent-2: #f2c14e; }
+
+
+
+
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="video" data-start="0" data-duration="51.162" data-width="1080" data-height="1920">
+      <audio id="son" src="son.wav" data-start="0" data-duration="51.162" data-track-index="1" data-volume="1"></audio>
+      
+      <div id="film" class="clip" data-start="0" data-duration="51.162" data-track-index="0">
+        <div id="fond"><div class="tache t0" style="left:-160px;top:120px;width:760px;height:760px;background:#ffd2b8"></div><div class="tache t1" style="left:560px;top:620px;width:720px;height:720px;background:#e2dbff"></div><div class="tache t2" style="left:-220px;top:1180px;width:780px;height:780px;background:#cfe6ff"></div><div class="tache t3" style="left:600px;top:1420px;width:700px;height:700px;background:#d6f3e4"></div></div>
+<section class="scene" id="s0"><div class="cam"><div class="zoom"><div class="abs titre" id="s0-t" style="left:50px;right:50px;top:580px;font-size:137px"><div class="tl">Bulan hilang</div><div class="tl"><span class="acc">setahun</span>.</div><div class="tl">Bumi berubah.</div></div>
+      <div class="abs" id="s0-v" style="left:390px;top:1077px;width:300px;height:300px"><div class="tuile " style="width:300px;height:300px"><span class="emoji" style="font-size:168px">🌙</span></div></div>
+      <div class="abs sous centre" id="s0-s" style="left:60px;right:60px;top:1407px">Eksperimen 1 tahun</div></div></div></section>
+<section class="scene" id="s1"><div class="cam"><div class="zoom"><div class="abs" id="s1-v" style="left:445px;top:605px;width:190px;height:190px"><div class="tuile ic-t" style="width:190px;height:190px"><svg class="ic" viewBox="0 0 24 24" width="95" height="95" style="color:#fff"><g stroke-width="2.2"><circle class="t" cx="12" cy="12" r="9"/><path class="t" d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg></div></div>
+      <div class="abs nombre centre fort" id="s1-n" style="left:30px;right:30px;top:825px;height:270px;font-size:270px"><span class="odo" style="height:270px;line-height:270px"><span class="col" style="height:270px;width:0.6em"><span class="rouleau" data-c="3" data-k="0"><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span></span></span><span class="col" style="height:270px;width:0.6em"><span class="rouleau" data-c="3" data-k="1"><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span></span></span></span></div>
+      <div class="abs apres centre" id="s1-a" style="left:60px;right:60px;top:1115px">% pasang surut</div>
+      <div class="verre pilule abs" id="s1-l" style="left:364.5px;top:1235px;width:351px;height:100px;justify-content:center">Tanpa Bulan</div>
+      <div class="mention centre" id="s1-src" style="left:60px;right:60px;top:1350px">Source : Royal Museums Greenwich</div></div></div></section>
+<section class="scene" id="s2"><div class="cam"><div class="zoom"><div class="verre carte" id="s2-w" style="left:100px;top:630px;width:880px;height:740px">
+        <div class="carte-v" id="s2-v"><div class="tuile ic-t" style="width:190px;height:190px"><svg class="ic" viewBox="0 0 24 24" width="95" height="95" style="color:#fff"><g stroke-width="2.2"><circle class="t" cx="12" cy="12" r="4.2"/><path class="t" d="M12 2.5v2M12 19.5v2M4.6 4.6L6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></g></svg></div></div>
+        <div class="carte-t">Pasang tetap ada</div><div class="carte-x">Gravitasi Matahari masih bekerja</div>
+        <div class="carte-p"><span class="mini" id="s2-p0">Matahari</span><span class="mini" id="s2-p1">Laut</span></div></div></div></div></section>
+<section class="scene" id="s3"><div class="cam"><div class="zoom"><div class="verre graph" id="s3-w" style="left:90px;top:620px;width:900px;height:760px"><div class="g-titre">Pasang surut relatif</div></div><div class="abs barre-g fort" id="s3-b0" style="left:280px;top:850px;width:150px;height:420px"></div>
+          <div class="abs g-val centre" id="s3-v0" style="left:170px;top:782px;width:370px;height:56px">100%</div>
+          <div class="abs g-lab centre" id="s3-l0" style="left:170px;top:1288px;width:370px;height:44px">Dengan Bulan</div><div class="abs barre-g" id="s3-b1" style="left:650px;top:1131.4px;width:150px;height:138.6px"></div>
+          <div class="abs g-val centre" id="s3-v1" style="left:540px;top:1063.4px;width:370px;height:56px">~33%</div>
+          <div class="abs g-lab centre" id="s3-l1" style="left:540px;top:1288px;width:370px;height:44px">Tanpa Bulan</div></div></div></section>
+<section class="scene" id="s4"><div class="cam"><div class="zoom"><div class="verre alerte centre attention" id="s4-w" style="left:100px;top:740px;width:880px;height:600px">
+        <div class="al-t" style="font-size:62px">Pesisir berubah</div><div class="al-x">Kepiting, kerang, koral</div></div>
+      <div class="onde-al attention" id="s4-r1" style="left:445px;top:645px;width:190px;height:190px"></div><div class="onde-al attention" id="s4-r2" style="left:445px;top:645px;width:190px;height:190px"></div>
+      <div class="pastille-al centre attention" id="s4-i" style="left:445px;top:645px;width:190px;height:190px"><svg class="ic" viewBox="0 0 24 24" width="100" height="100" style="color:#fff"><g stroke-width="2"><path class="t" d="M12 3.5L2.8 19.5h18.4z"/><path class="t" d="M12 10v4.2M12 17h.01"/></g></svg></div></div></div></section>
+<section class="scene" id="s5"><div class="cam"><div class="zoom"><div class="abs etiq centre" id="s5-ti" style="left:60px;right:60px;top:699px;height:50px;font-size:30px">3 yang kehilangan arah</div>
+      <div class="verre ligne" id="s5-i0" style="left:80px;top:779px;width:920px;height:150px;font-size:48px">
+          <div class="ligne-on"></div>
+          <div class="ligne-v"><div class="tuile ic-t" style="width:110px;height:110px"><svg class="ic" viewBox="0 0 24 24" width="55" height="55" style="color:#fff"><g stroke-width="2.2"><path class="t" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle class="t" cx="12" cy="12" r="3.2"/></g></svg></div></div>
+          <div class="ligne-t">Ngengat</div></div><div class="verre ligne" id="s5-i1" style="left:80px;top:955px;width:920px;height:150px;font-size:48px">
+          <div class="ligne-on"></div>
+          <div class="ligne-v"><div class="tuile " style="width:110px;height:110px"><span class="emoji" style="font-size:62px">🐢</span></div></div>
+          <div class="ligne-t">Penyu</div></div><div class="verre ligne" id="s5-i2" style="left:80px;top:1131px;width:920px;height:150px;font-size:48px">
+          <div class="ligne-on"></div>
+          <div class="ligne-v"><div class="tuile " style="width:110px;height:110px"><span class="emoji" style="font-size:62px">🪸</span></div></div>
+          <div class="ligne-t">Koral</div></div></div></div></section>
+<section class="scene" id="s6"><div class="cam"><div class="zoom"><div class="verre duel centre" id="s6-g" style="left:72px;top:690px;width:440px;height:620px">
+      <div><div class="tuile " style="width:160px;height:160px"><span class="emoji" style="font-size:90px">🌘</span></div></div><div class="duel-t">Gerhana bulan</div><div class="duel-x">Hilang</div>
+      <svg class="abs barre" style="left:40px;top:60px;width:360px;height:500px" viewBox="0 0 360 500"><path id="s6-g-x1" d="M30 30 L330 470" /><path id="s6-g-x2" d="M330 30 L30 470"/></svg></div><div class="verre duel centre" id="s6-d" style="left:568px;top:690px;width:440px;height:620px">
+      <div><div class="tuile ic-t" style="width:160px;height:160px"><svg class="ic" viewBox="0 0 24 24" width="80" height="80" style="color:#fff"><g stroke-width="2.2"><circle class="t" cx="12" cy="12" r="4.2"/><path class="t" d="M12 2.5v2M12 19.5v2M4.6 4.6L6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></g></svg></div></div><div class="duel-t">Gerhana matahari</div><div class="duel-x">Tetap ada</div>
+      <svg class="abs barre" style="left:40px;top:60px;width:360px;height:500px" viewBox="0 0 360 500"><path id="s6-d-x1" d="M30 30 L330 470" /><path id="s6-d-x2" d="M330 30 L30 470"/></svg></div><div class="vs centre" id="s6-vs" style="left:478px;top:938px;width:124px;height:124px">≠</div></div></div></section>
+<section class="scene" id="s7"><div class="cam"><div class="zoom"><div class="abs" id="s7-v" style="left:445px;top:605px;width:190px;height:190px"><div class="tuile ic-t" style="width:190px;height:190px"><svg class="ic" viewBox="0 0 24 24" width="95" height="95" style="color:#fff"><g stroke-width="2.2"><circle class="t" cx="12" cy="12" r="9"/><path class="t" d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg></div></div>
+      <div class="abs nombre centre" id="s7-n" style="left:30px;right:30px;top:825px;height:270px;font-size:270px"><span class="odo" style="height:270px;line-height:270px"><span class="col" style="height:270px;width:0.6em"><span class="rouleau" data-c="2" data-k="0"><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span></span></span><span class="col" style="height:270px;width:0.6em"><span class="rouleau" data-c="3" data-k="1"><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span><span style="height:270px">0</span><span style="height:270px">1</span><span style="height:270px">2</span><span style="height:270px">3</span><span style="height:270px">4</span><span style="height:270px">5</span><span style="height:270px">6</span><span style="height:270px">7</span><span style="height:270px">8</span><span style="height:270px">9</span></span></span></span></div>
+      <div class="abs apres centre" id="s7-a" style="left:60px;right:60px;top:1115px">derajat kemiringan</div>
+      <div class="verre pilule abs" id="s7-l" style="left:280.5px;top:1235px;width:519px;height:100px;justify-content:center">Stabil karena Bulan</div>
+      <div class="mention centre" id="s7-src" style="left:60px;right:60px;top:1350px">Source : NASA</div></div></div></section>
+<section class="scene" id="s8"><div class="cam"><div class="zoom"><div class="abs guillemet centre" id="s8-g" style="left:420px;top:570px;width:240px;height:240px">“</div>
+      <div class="abs cite centre" id="s8-t" style="left:80px;right:80px;top:800px;height:440px;font-size:104px"><span class="w">Bukan</span> <span class="w">kiamat,</span> <span class="w">tapi</span> <span class="w acc">ritmenya</span> <span class="w">yang</span> <span class="w">hilang.</span></div>
+      <div class="verre pilule abs" id="s8-a" style="left:330px;top:1280px;width:420px;height:100px;justify-content:center"><svg class="ic" viewBox="0 0 24 24" width="60" height="60" style="color:var(--accent)"><g stroke-width="2"><circle class="t" cx="12" cy="12" r="9"/><path class="t" d="M12 7v5.5l3.5 2"/></g></svg>Kesimpulan</div></div></div></section>
+<section class="scene" id="s9"><div class="cam"><div class="zoom"><div class="abs titre" id="s9-t" style="left:50px;right:50px;top:580px;font-size:119px"><div class="tl">Matahari hilang</div><div class="tl"><span class="acc">satu jam</span>?</div><div class="tl">Lanjut besok.</div></div>
+      <div class="abs" id="s9-v" style="left:390px;top:1021px;width:300px;height:300px"><div class="tuile ic-t" style="width:300px;height:300px"><svg class="ic" viewBox="0 0 24 24" width="150" height="150" style="color:#fff"><g stroke-width="2.2"><circle class="t" cx="12" cy="12" r="4.2"/><path class="t" d="M12 2.5v2M12 19.5v2M4.6 4.6L6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></g></svg></div></div>
+      <div class="abs sous centre" id="s9-s" style="left:60px;right:60px;top:1351px">Episode berikutnya</div></div></div></section>
+<section class="scene" id="fin"><div class="cam"><div class="zoom">
+      <div class="abs" id="fin-v" style="left:425px;top:715px;width:230px;height:230px"><div class="tuile ic-t" style="width:230px;height:230px"><svg class="ic" viewBox="0 0 24 24" width="115" height="115" style="color:#fff"><g stroke-width="2.2"><path class="t" d="M12 3l1.8 5.4L19 10.2l-5.2 1.8L12 17.4l-1.8-5.4L5 10.2l5.2-1.8z"/></g></svg></div></div>
+      <div class="abs fin-t centre" id="fin-t" style="left:60px;right:60px;top:990px;height:100px">Bulan itu metronom Bumi.</div>
+      <div class="abs fin-s centre" id="fin-s" style="left:60px;right:60px;top:1100px;height:60px">Ikuti untuk eksperimen berikutnya.</div></div></div></section>
+        <div id="legendes">
+<div class="cap" id="c0" style="font-size:81px"><span class="w">Bulan</span><span class="w">hilang</span><span class="w acc">setahun</span></div>
+<div class="cap" id="c1" style="font-size:109px"><span class="w">Bumi</span><span class="w">tidak</span><span class="w">mati</span></div>
+<div class="cap" id="c2" style="font-size:116px"><span class="w">tapi</span><span class="w">berubah</span></div>
+<div class="cap" id="c3" style="font-size:96px"><span class="w">Pasang</span><span class="w">surut</span><span class="w">cuma</span></div>
+<div class="cap" id="c4" style="font-size:90px"><span class="w">tersisa</span><span class="w">tiga</span><span class="w">puluh</span></div>
+<div class="cap" id="c5" style="font-size:116px"><span class="w">tiga</span><span class="w acc">persen</span><span class="w">di</span></div>
+<div class="cap" id="c6" style="font-size:116px"><span class="w">banyak</span><span class="w">pantai</span></div>
+<div class="cap" id="c7" style="font-size:116px"><span class="w">Matahari</span><span class="w">masih</span></div>
+<div class="cap" id="c8" style="font-size:116px"><span class="w">menarik</span><span class="w">laut</span></div>
+<div class="cap" id="c9" style="font-size:81px"><span class="w">jadi</span><span class="w">ombak</span><span class="w">tetap</span><span class="w">ada</span></div>
+<div class="cap" id="c10" style="font-size:68px"><span class="w">Itu</span><span class="w">cukup</span><span class="w">mengubah</span><span class="w">pantai</span></div>
+<div class="cap" id="c11" style="font-size:116px"><span class="w">tapi</span><span class="w">tidak</span></div>
+<div class="cap" id="c12" style="font-size:96px"><span class="w">menghentikan</span><span class="w">laut</span></div>
+<div class="cap" id="c13" style="font-size:116px"><span class="w">Di</span><span class="w">pesisir</span></div>
+<div class="cap" id="c14" style="font-size:86px"><span class="w">kepiting</span><span class="w">dan</span><span class="w">kerang</span></div>
+<div class="cap" id="c15" style="font-size:71px"><span class="w">kehilangan</span><span class="w">ritme</span><span class="w">harian</span></div>
+<div class="cap" id="c16" style="font-size:116px"><span class="w">Ngengat</span></div>
+<div class="cap" id="c17" style="font-size:116px"><span class="w">penyu</span></div>
+<div class="cap" id="c18" style="font-size:68px"><span class="w">dan</span><span class="w">koral</span><span class="w">kehilangan</span><span class="w">arah</span></div>
+<div class="cap" id="c19" style="font-size:86px"><span class="w">Mereka</span><span class="w">pakai</span><span class="w">cahaya</span></div>
+<div class="cap" id="c20" style="font-size:90px"><span class="w">bulan</span><span class="w">untuk</span><span class="w">pulang</span></div>
+<div class="cap" id="c21" style="font-size:116px"><span class="w">dan</span><span class="w">bertelur</span></div>
+<div class="cap" id="c22" style="font-size:81px"><span class="w">Gerhana</span><span class="w">bulan</span><span class="w">hilang</span></div>
+<div class="cap" id="c23" style="font-size:102px"><span class="w">gerhana</span><span class="w">matahari</span></div>
+<div class="cap" id="c24" style="font-size:116px"><span class="w">tetap</span><span class="w">ada</span></div>
+<div class="cap" id="c25" style="font-size:96px"><span class="w">Bumi</span><span class="w">tetap</span><span class="w">miring</span></div>
+<div class="cap" id="c26" style="font-size:74px"><span class="w">dua</span><span class="w">puluh</span><span class="w">tiga</span><span class="w">derajat</span></div>
+<div class="cap" id="c27" style="font-size:102px"><span class="w">Tapi</span><span class="w">goyahan</span><span class="w">itu</span></div>
+<div class="cap" id="c28" style="font-size:90px"><span class="w">butuh</span><span class="w">ribuan</span><span class="w">tahun</span></div>
+<div class="cap" id="c29" style="font-size:116px"><span class="w">bukan</span><span class="w">setahun</span></div>
+<div class="cap" id="c30" style="font-size:86px"><span class="w">Hari</span><span class="w">juga</span><span class="w">tetap</span><span class="w">dua</span></div>
+<div class="cap" id="c31" style="font-size:109px"><span class="w">puluh</span><span class="w">empat</span><span class="w">jam</span></div>
+<div class="cap" id="c32" style="font-size:109px"><span class="w">sepanjang</span><span class="w">tahun</span></div>
+<div class="cap" id="c33" style="font-size:96px"><span class="w">Jadi</span><span class="w">bukan</span><span class="w">kiamat</span></div>
+<div class="cap" id="c34" style="font-size:81px"><span class="w">tapi</span><span class="w">Bumi</span><span class="w">kehilangan</span></div>
+<div class="cap" id="c35" style="font-size:116px"><span class="w acc">ritmenya</span></div>
+<div class="cap" id="c36" style="font-size:81px"><span class="w">Itu</span><span class="w">pelajaran</span><span class="w">paling</span></div>
+<div class="cap" id="c37" style="font-size:116px"><span class="w">penting</span><span class="w">dari</span></div>
+<div class="cap" id="c38" style="font-size:116px"><span class="w">eksperimen</span><span class="w">ini</span></div>
+<div class="cap" id="c39" style="font-size:116px"><span class="w">Lanjut</span></div>
+<div class="cap" id="c40" style="font-size:102px"><span class="w">apa</span><span class="w">yang</span><span class="w">terjadi</span></div>
+<div class="cap" id="c41" style="font-size:116px"><span class="w">kalau</span><span class="w">matahari</span></div>
+<div class="cap" id="c42" style="font-size:102px"><span class="w">hilang</span><span class="w acc">satu</span><span class="w acc">jam?</span></div>
+        </div>
+        <div id="marque" class="verre pilule"><svg class="ic" viewBox="0 0 24 24" width="50" height="50" style="color:var(--accent)"><g stroke-width="2"><path class="t" d="M12 3l1.8 5.4L19 10.2l-5.2 1.8L12 17.4l-1.8-5.4L5 10.2l5.2-1.8z"/></g></svg><span>What If</span></div>
+      </div>
+    </div>
+    <script>
+
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+const $$ = (s) => (typeof s === "string" ? Array.from(document.querySelectorAll(s)) : [s]);
+const net = (sel, t) => tl.set(sel, { filter: "none" }, t);
+const ENTREES = {
+  pop: [{ opacity: 0, scale: 0.55, filter: "blur(10px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.6, ease: "back.out(1.7)" }],
+  monte: [{ opacity: 0, y: 80, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.7, ease: "expo.out" }],
+  descend: [{ opacity: 0, y: -80, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.7, ease: "expo.out" }],
+  gauche: [{ opacity: 0, x: -240, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.75, ease: "expo.out" }],
+  droite: [{ opacity: 0, x: 240, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.75, ease: "expo.out" }],
+  zoom: [{ opacity: 0, scale: 1.6, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.75, ease: "expo.out" }],
+  tourne: [{ opacity: 0, rotationY: -85, transformPerspective: 1500 }, { opacity: 1, rotationY: 0, duration: 0.85, ease: "expo.out" }],
+  fondu: [{ opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }],
+};
+function entre(sel, t, type = "pop", o = {}) {
+  if (t < 0.1 || !$$(sel).length) return;
+  const [de, a] = ENTREES[type];
+  const vars = { ...a };
+  if (o.duree) vars.duration = o.duree;
+  if (o.stagger) vars.stagger = o.stagger;
+  tl.fromTo(sel, { ...de }, vars, t);
+  if ("filter" in de) net(sel, t + vars.duration + (o.stagger ? o.stagger * ($$(sel).length - 1) : 0) + 0.02);
+}
+function sort(sel, t, o = {}) { tl.to(sel, { opacity: 0, scale: o.scale ?? 0.8, y: o.y ?? 0, duration: o.duree ?? 0.35, ease: "power2.in" }, t); }
+function scene(id, t0, t1, entree, sortie) {
+  const el = document.getElementById(id);
+  const E = {
+    zoom: [{ opacity: 0, scale: 0.9, filter: "blur(20px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.6, ease: "expo.out" }],
+    monte: [{ opacity: 0, y: 160, filter: "blur(16px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "expo.out" }],
+    tourne: [{ opacity: 0, rotationY: -60, transformPerspective: 2000, filter: "blur(10px)" }, { opacity: 1, rotationY: 0, filter: "blur(0px)", duration: 0.75, ease: "expo.out" }],
+    plonge: [{ opacity: 0, scale: 1.35, filter: "blur(20px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.65, ease: "expo.out" }],
+    fondu: [{ opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }],
+  };
+  const S = {
+    zoom: { opacity: 0, scale: 1.1, filter: "blur(18px)" }, monte: { opacity: 0, y: -160, filter: "blur(16px)" },
+    tourne: { opacity: 0, rotationY: 60, transformPerspective: 2000, filter: "blur(10px)" }, plonge: { opacity: 0, scale: 1.6, filter: "blur(20px)" },
+    fondu: { opacity: 0 },
+  };
+  tl.set(el, { visibility: "visible" }, t0);
+  if (t0 >= 0.1) {
+    const [de, a] = E[entree] || E.zoom;
+    tl.fromTo(el, de, a, t0);
+    if ("filter" in de) net(el, t0 + a.duration + 0.02);
+  }
+  if (sortie !== "aucune") tl.to(el, { ...(S[sortie] || S.zoom), duration: 0.38, ease: "power2.in" }, t1 - 0.38);
+  tl.set(el, { visibility: "hidden" }, t1);
+}
+function pousse(sel, t, e = 1.04) { tl.to(sel, { scale: e, duration: 0.5, ease: "power2.out" }, t); tl.to(sel, { scale: 1, duration: 0.9, ease: "power2.inOut" }, t + 0.6); }
+function trace(sel, t, d = 0.8) {
+  $$(sel).forEach((p) => { const L = p.getTotalLength(); tl.fromTo(p, { strokeDasharray: L + " " + L, strokeDashoffset: L }, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, t); });
+}
+function tape(sel, t, d) { const l = $$(sel + " .l"); tl.fromTo(l, { opacity: 0 }, { opacity: 1, duration: 0.01, stagger: d / Math.max(1, l.length) }, t); }
+function tourne(sel, t0, t1, deg) { tl.fromTo(sel, { rotation: 0 }, { rotation: deg, duration: Math.max(0.1, t1 - t0), ease: "none" }, t0); }
+function flotte(sel, t0, t1, amp = 12, periode = 2.6) {
+  const n = Math.max(1, Math.floor((t1 - t0) / periode));
+  tl.fromTo(sel, { y: 0 }, { y: -amp, duration: periode / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1, immediateRender: false }, t0);
+}
+function compteur(sel, t, h, d = 1.3) {
+  $$(sel + " .rouleau").forEach((r) => {
+    const c = Number(r.dataset.c), k = Number(r.dataset.k), y = -((k + 1) * 10 + c) * h;
+    if (t < 0.1) tl.set(r, { y }, 0); else tl.fromTo(r, { y: 0 }, { y, duration: d + k * 0.14, ease: "power3.out" }, t);
+  });
+}
+function secoue(sel, t, a = 4) { tl.to(sel, { keyframes: [{ rotation: -a, duration: 0.07 }, { rotation: a, duration: 0.08 }, { rotation: -a / 2, duration: 0.07 }, { rotation: 0, duration: 0.08 }] }, t); }
+function pulse(sel, t, e = 1.12, d = 0.18) { tl.to(sel, { scale: e, duration: d, ease: "power2.out", yoyo: true, repeat: 1 }, t); }
+function legende(id, t0, t1, forts = []) {
+  const el = document.getElementById(id);
+  const w = el.querySelectorAll(".w");
+  tl.set(el, { visibility: "visible" }, t0);
+  const total = t1 - t0;
+  const din = Math.min(0.42, Math.max(0.12, total * 0.42)), st = Math.min(0.055, total * 0.06);
+  const finEntree = t0 < 0.1 ? t0 : t0 + din + st * (w.length - 1);
+  const sortie = Math.max(finEntree + 0.01, t1 - 0.16);
+  if (t0 >= 0.1) tl.fromTo(w, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: din, ease: "power3.out", stagger: st, immediateRender: false }, t0);
+  for (const [k, t] of forts) tl.fromTo(w[k], { scale: 1 }, { scale: 1.08, duration: 0.14, ease: "power2.out", yoyo: true, repeat: 1, immediateRender: false }, Math.max(t, finEntree + 0.01));
+  tl.to(el, { opacity: 0, y: -12, duration: Math.max(0.04, t1 - sortie), ease: "power1.in" }, sortie);
+  tl.set(el, { visibility: "hidden" }, t1);
+}
+
+tl.fromTo("#fond .t0", { x: 0, y: 0, scale: 1 }, { x: 110, y: 120, scale: 0.88, duration: 51.162, ease: "sine.inOut" }, 0);
+tl.fromTo("#fond .t1", { x: 0, y: 0, scale: 1 }, { x: -90, y: 120, scale: 1.18, duration: 51.162, ease: "sine.inOut" }, 0);
+tl.fromTo("#fond .t2", { x: 0, y: 0, scale: 1 }, { x: 110, y: -110, scale: 0.88, duration: 51.162, ease: "sine.inOut" }, 0);
+tl.fromTo("#fond .t3", { x: 0, y: 0, scale: 1 }, { x: -90, y: -110, scale: 1.18, duration: 51.162, ease: "sine.inOut" }, 0);
+entre("#marque", 0.5, "monte"); sort("#marque", 48.562, { y: 30, scale: 0.9 });
+legende("c0", 0, 2.296, [[2,0.875]]);
+legende("c1", 2.296, 3.559, []);
+legende("c2", 3.559, 4.981, []);
+legende("c3", 4.981, 5.778, []);
+legende("c4", 5.778, 6.611, []);
+legende("c5", 6.611, 7.26, [[1,6.867]]);
+legende("c6", 7.26, 8.671, []);
+legende("c7", 8.671, 9.418, []);
+legende("c8", 9.418, 10.423, []);
+legende("c9", 10.423, 12.274, []);
+legende("c10", 12.274, 13.929, []);
+legende("c11", 13.929, 14.407, []);
+legende("c12", 14.407, 15.853, []);
+legende("c13", 15.853, 16.883, []);
+legende("c14", 16.883, 17.692, []);
+legende("c15", 17.692, 19.494, []);
+legende("c16", 19.494, 20.339, []);
+legende("c17", 20.339, 21.112, []);
+legende("c18", 21.112, 23.049, []);
+legende("c19", 23.049, 23.943, []);
+legende("c20", 23.943, 24.789, []);
+legende("c21", 24.789, 26.052, []);
+legende("c22", 26.052, 27.51, []);
+legende("c23", 27.51, 28.319, []);
+legende("c24", 28.319, 29.582, []);
+legende("c25", 29.582, 30.464, []);
+legende("c26", 30.464, 32.205, []);
+legende("c27", 32.205, 33.002, []);
+legende("c28", 33.002, 34.289, []);
+legende("c29", 34.289, 35.784, []);
+legende("c30", 35.784, 36.74, []);
+legende("c31", 36.74, 37.365, []);
+legende("c32", 37.365, 38.873, []);
+legende("c33", 38.873, 40.258, []);
+legende("c34", 40.258, 41.177, []);
+legende("c35", 41.177, 42.318, [[0,41.237]]);
+legende("c36", 42.318, 43.262, []);
+legende("c37", 43.262, 43.801, []);
+legende("c38", 43.801, 45.223, []);
+legende("c39", 45.223, 46.118, []);
+legende("c40", 46.118, 46.853, []);
+legende("c41", 46.853, 47.441, []);
+legende("c42", 47.441, 48.852, [[1,47.71],[2,47.955]]);
+scene("s0", 0, 5.071, "aucune", "zoom");
+entre("#s0-t .tl", 0.05, "monte", { stagger: 0.09 });
+entre("#s0-v", 0, "pop"); flotte("#s0-v", 1, 5.071, 10);
+entre("#s0-s", 0, "monte");
+pulse("#s0-t .acc", 0.875, 1.06, 0.16);
+scene("s1", 4.771, 8.761, "monte", "zoom");
+entre("#s1-n", 4.821, "zoom"); compteur("#s1-n", 6.016, 270);
+entre("#s1-v", 4.921, "pop");
+entre("#s1-a", 6.766, "monte");
+entre("#s1-l", 7.166, "pop");
+entre("#s1-src", 7.366, "fondu");
+scene("s2", 8.461, 12.364, "plonge", "zoom");
+entre("#s2-w", 8.511000000000001, "zoom");
+entre("#s2-v", 8.761000000000001, "pop");
+entre("#s2-p0", 9.731, "pop");
+entre("#s2-p1", 10.612, "pop");
+scene("s3", 12.064, 15.943, "tourne", "zoom");
+entre("#s3-w", 12.114, "monte");
+tl.fromTo("#s3-b0", { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.7, ease: "expo.out" }, 12.184); entre("#s3-v0, #s3-l0", 12.534, "fondu");
+tl.fromTo("#s3-b1", { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.7, ease: "expo.out" }, 13.456); entre("#s3-v1, #s3-l1", 13.806, "fondu");
+scene("s4", 15.643, 19.584, "zoom", "zoom");
+entre("#s4-w", 15.693000000000001, "zoom"); entre("#s4-i", 15.843, "pop"); secoue("#s4-i", 16.443, 8);
+tl.fromTo("#s4-r1, #s4-r2", { scale: 1, opacity: 0.5 }, { scale: 1.9, opacity: 0, duration: 1.4, ease: "power1.out", repeat: 1, stagger: 0.7 }, 16.143);
+scene("s5", 19.284, 26.142, "monte", "zoom");
+entre("#s5-ti", 19.334, "fondu");
+entre("#s5-i0", 19.404, "gauche"); tl.fromTo("#s5-i0 .ligne-on", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 19.454);
+entre("#s5-i1", 20.249, "gauche"); tl.fromTo("#s5-i1 .ligne-on", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 20.299);
+tl.to("#s5-i0", { opacity: 0.5, duration: 0.3 }, 20.249); tl.to("#s5-i0 .ligne-on", { opacity: 0, duration: 0.2 }, 20.249);
+entre("#s5-i2", 21.279, "gauche"); tl.fromTo("#s5-i2 .ligne-on", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 21.329);
+tl.to("#s5-i1", { opacity: 0.5, duration: 0.3 }, 21.279); tl.to("#s5-i1 .ligne-on", { opacity: 0, duration: 0.2 }, 21.279);
+tl.to("#s5 .ligne", { opacity: 1, duration: 0.35 }, 22.829);
+scene("s6", 25.842, 29.672, "plonge", "zoom");
+entre("#s6-g", 25.962, "gauche"); entre("#s6-d", 27.214, "droite"); entre("#s6-vs", 27.464, "pop");
+tl.to("#s6-g", { opacity: 0.5, scale: 0.94, filter: "grayscale(1)", duration: 0.4 }, 26.761); tl.set("#s6-g .barre path", { opacity: 0.7 }, 26.811);
+        trace("#s6-g-x1", 26.811, 0.25); trace("#s6-g-x2", 27.011, 0.25);
+        tl.to("#s6-d", { scale: 1.06, duration: 0.45, ease: "back.out(2)" }, 26.861);
+scene("s7", 29.372, 38.963, "tourne", "zoom");
+entre("#s7-n", 29.422, "zoom"); compteur("#s7-n", 30.274, 270);
+entre("#s7-v", 29.522, "pop");
+entre("#s7-a", 31.024, "monte");
+entre("#s7-l", 31.424, "pop");
+entre("#s7-src", 31.624, "fondu");
+scene("s8", 38.663, 45.313, "zoom", "zoom");
+entre("#s8-g", 38.712999999999994, "pop");
+tl.fromTo("#s8-t .w", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, stagger: 0.22 }, 38.863);
+entre("#s8-a", 40.483, "monte");
+scene("s9", 45.013, 49.262, "monte", "zoom");
+entre("#s9-t .tl", 45.062999999999995, "monte", { stagger: 0.09 });
+entre("#s9-v", 45.312999999999995, "pop"); flotte("#s9-v", 46.013, 49.262, 10);
+entre("#s9-s", 45.463, "monte");
+pulse("#s9-t .acc", 47.71, 1.06, 0.16);
+pousse("#s0 > .cam > .zoom", 0.875, 1.035);
+pousse("#s1 > .cam > .zoom", 6.867, 1.035);
+pousse("#s8 > .cam > .zoom", 41.237, 1.035);
+pousse("#s9 > .cam > .zoom", 47.71, 1.035);
+scene("fin", 48.762, 51.162, "zoom", "aucune"); entre("#fin-v", 48.962, "pop"); entre("#fin-t", 49.112, "monte"); entre("#fin-s", 49.262, "monte");
+tl.set({}, {}, 51.162);
+window.__timelines["video"] = tl;
+    </script>
+    <script>
+(function () {
+  var m = /[?&]t=([\d.]+)/.exec(location.search);
+  if (!m) return;
+  var t = parseFloat(m[1]);
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      var tl = window.__timelines && window.__timelines.video;
+      if (!tl) return;
+      tl.pause();
+      tl.time(t);
+    }, 80);
+  });
+})();
+    </script>
+  </body>
+</html>
