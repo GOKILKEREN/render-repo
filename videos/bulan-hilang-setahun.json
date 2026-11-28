@@ -1,0 +1,141 @@
+{
+  "id": "bulan-hilang-setahun",
+  "titre": "Bulan Hilang Setahun: Ini yang Terjadi di Bumi",
+  "langue": "id",
+  "voix": { "nom": "id-ID-ArdiNeural", "debit": "+2%" },
+  "marque": { "nom": "What If", "visuel": "icone:etincelle" },
+  "couleurs": { "accent": "#4f6bff", "accent2": "#f2c14e" },
+  "phrases": [
+    {
+      "texte": "Bulan hilang *setahun*. Bumi tidak mati, tapi berubah.",
+      "scene": {
+        "type": "titre",
+        "lignes": ["Bulan hilang", "*setahun*.", "Bumi berubah."],
+        "visuel": "emoji:🌙",
+        "sous": "Eksperimen 1 tahun"
+      }
+    },
+    {
+      "texte": "Pasang surut cuma tersisa tiga puluh tiga *persen* di banyak pantai.",
+      "scene": {
+        "type": "chiffre",
+        "valeur": "33",
+        "apres": "% pasang surut",
+        "label": "Tanpa Bulan",
+        "source": "Royal Museums Greenwich",
+        "au": "tiga",
+        "couleur": "accent",
+        "visuel": "icone:globe"
+      }
+    },
+    {
+      "texte": "Matahari masih menarik laut, jadi ombak tetap ada.",
+      "scene": {
+        "type": "carte",
+        "visuel": "icone:soleil",
+        "titre": "Pasang tetap ada",
+        "texte": "Gravitasi Matahari masih bekerja",
+        "pilules": ["Matahari", "Laut"]
+      }
+    },
+    {
+      "texte": "Itu cukup mengubah pantai, tapi tidak menghentikan laut.",
+      "scene": {
+        "type": "graphique",
+        "titre": "Pasang surut relatif",
+        "barres": [
+          { "label": "Dengan Bulan", "valeur": 100, "affiche": "100%" },
+          { "label": "Tanpa Bulan", "valeur": 33, "affiche": "~33%" }
+        ],
+        "fort": 0,
+        "au": "cukup"
+      }
+    },
+    {
+      "texte": "Di pesisir, kepiting dan kerang kehilangan ritme harian.",
+      "scene": {
+        "type": "alerte",
+        "niveau": "attention",
+        "titre": "Pesisir berubah",
+        "texte": "Kepiting, kerang, koral",
+        "visuel": "icone:alerte"
+      }
+    },
+    {
+      "texte": "Ngengat, penyu, dan koral kehilangan arah.",
+      "scene": {
+        "type": "liste",
+        "titre": "3 yang kehilangan arah",
+        "items": [
+          { "texte": "Ngengat", "visuel": "icone:oeil", "au": "Ngengat" },
+          { "texte": "Penyu", "visuel": "emoji:🐢", "au": "penyu" },
+          { "texte": "Koral", "visuel": "emoji:🪸", "au": "koral" }
+        ]
+      }
+    },
+    {
+      "texte": "Mereka pakai cahaya bulan untuk pulang dan bertelur."
+    },
+    {
+      "texte": "Gerhana bulan hilang, gerhana matahari tetap ada.",
+      "scene": {
+        "type": "duel",
+        "gauche": { "titre": "Gerhana bulan", "texte": "Hilang", "visuel": "emoji:🌘" },
+        "droite": { "titre": "Gerhana matahari", "texte": "Tetap ada", "visuel": "icone:soleil" },
+        "perdant": "gauche",
+        "au_perdant": "hilang",
+        "vs": "≠"
+      }
+    },
+    {
+      "texte": "Bumi tetap miring dua puluh tiga derajat.",
+      "scene": {
+        "type": "chiffre",
+        "valeur": "23",
+        "apres": "derajat kemiringan",
+        "label": "Stabil karena Bulan",
+        "source": "NASA",
+        "au": "dua",
+        "couleur": "accent2",
+        "visuel": "icone:globe"
+      }
+    },
+    {
+      "texte": "Tapi goyahan itu butuh ribuan tahun, bukan setahun."
+    },
+    {
+      "texte": "Hari juga tetap dua puluh empat jam sepanjang tahun."
+    },
+    {
+      "texte": "Jadi bukan kiamat, tapi Bumi kehilangan *ritmenya*.",
+      "scene": {
+        "type": "citation",
+        "texte": "Bukan kiamat, tapi *ritmenya* yang hilang.",
+        "auteur": "Kesimpulan",
+        "visuel": "icone:horloge"
+      }
+    },
+    {
+      "texte": "Itu pelajaran paling penting dari eksperimen ini."
+    },
+    {
+      "texte": "Lanjut: apa yang terjadi kalau matahari hilang *satu jam*?",
+      "scene": {
+        "type": "titre",
+        "lignes": ["Matahari hilang", "*satu jam*?", "Lanjut besok."],
+        "visuel": "icone:soleil",
+        "sous": "Episode berikutnya"
+      }
+    }
+  ],
+  "fin": {
+    "texte": "Bulan itu metronom Bumi.",
+    "sous": "Ikuti untuk eksperimen berikutnya."
+  },
+  "publication": {
+    "titre": "Bulan Hilang Setahun: Ini yang Terjadi di Bumi",
+    "legende": "Bulan hilang setahun, dan Bumi tidak mati—tapi ritmenya berubah. Pasang surut, malam, dan koral semua ikut bergeser. #sains #bulan #bumi #whatif",
+    "hashtags": ["sains", "bulan", "bumi", "whatif"],
+    "commentaire": "Menurutmu, efek mana yang paling bikin kaget: pasang surut yang melemah atau malam tanpa bulan?"
+  }
+}
