@@ -1,0 +1,48 @@
+[shot window_horse]
+[act Calm, low, letting the strange detail land.]
+On the seventh night, a white horse was waiting outside my window.
+[shot window_horse]
+It did not neigh. It just breathed, like someone standing in the cold.
+[shot road]
+My name is Daniel. Seven days earlier, Karis walked past the last streetlight and into the trees.
+[shot search]
+I searched every morning. I called every evening. The forest gave back nothing.
+[shot poster]
+On day six, I taped her face to a pole. By morning, the tape was cut clean.
+[shot window_horse]
+[act Quiet, certain, not frightened.]
+DANIEL: I know. You know where she is.
+[shot horse_eyes]
+The horse turned its head toward the tree line.
+[shot forest_path]
+I followed it past the streetlight, past the warning sign, into a path that was not there before.
+[shot clearing]
+Karis was sitting in the clearing, unharmed, with her hands in her lap.
+[shot karis]
+[act Soft, steady, careful with every word.]
+KARIS: Don't come closer, Daniel.
+[shot karis]
+[act Soft, steady, careful with every word.]
+KARIS: It only shows itself to people who have lost something.
+[shot clearing_wide]
+I asked her what it wanted. She looked at the horse, and did not answer.
+[shot horse_hoof]
+The horse struck one hoof. Once. Then twice.
+[shot karis]
+[act Quiet, almost gentle.]
+KARIS: Those are the days. Seven. If you look away, the forest starts them again.
+[shot unseen]
+Behind her, a third footstep landed in the leaves.
+[shot unseen]
+Nothing was there. But the horse stepped between us, and would not let me pass.
+[shot clearing_wide]
+[act Calm, serious, asking the viewer directly.]
+That was when I understood. The horse had not brought me to Karis.
+[shot horse_eyes]
+It had brought Karis to the choice.
+[shot endcard]
+[act Calm and serious, asking the viewer directly.]
+Day seven. Would you follow the horse?
+Option A: walk back to the road.
+Option B: follow it deeper.
+Comment A or B.

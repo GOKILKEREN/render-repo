@@ -1,0 +1,11 @@
+{
+  "voices": {
+    "NARRATOR": "A calm, low, weary American man in his early thirties with clear, careful diction, every word fully pronounced. Conversational pace, quiet and serious, like someone telling one listener what happened.",
+    "DANIEL": "A calm, low, weary American man in his early thirties with clear, careful diction, every word fully pronounced. Conversational pace, quiet and serious, like someone telling one listener what happened.",
+    "KARIS": "A soft, steady American woman in her late twenties with careful diction, every word fully pronounced. Conversational pace, gentle but certain, not frightened."
+  },
+  "names": "Daniel Karis",
+  "pitch_as": {
+    "DANIEL": "NARRATOR"
+  }
+}
