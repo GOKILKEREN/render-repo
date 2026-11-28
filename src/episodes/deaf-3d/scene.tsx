@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import * as THREE from 'three';
 import {Canvas, useFrame, useThree} from '@react-three/fiber';
 import {Bloom, EffectComposer, Noise, Vignette} from '@react-three/postprocessing';
@@ -85,7 +86,9 @@ const FrameSync: React.FC<{frame: number; totalFrames: number; index: number}> =
   index,
 }) => {
   const invalidate = useThree((state) => state.invalidate);
-  useFrame(() => invalidate());
+  useEffect(() => {
+    invalidate();
+  }, [frame, invalidate]);
   const p = Math.min(1, Math.max(0, frame / Math.max(1, totalFrames - 1)));
   return <group userData={{frame, totalFrames, scene: index, progress: p}} />;
 };
