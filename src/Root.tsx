@@ -8,6 +8,8 @@ import { Friends3DMain } from './episodes/friends-3d';
 import { useFriends3DFrames } from './episodes/friends-3d/durations';
 import { Deaf3DMain } from './episodes/deaf-3d';
 import { useDeaf3DFrames } from './episodes/deaf-3d/durations';
+import { TemenHilang3DMain } from './episodes/temen-hilang-3d';
+import { useTemenHilangFrames } from './episodes/temen-hilang-3d/durations';
 
 // Every episode gets two compositions: <Id> (the film) and <Id>Board (one frame per shot, at its key frame, for the
 // storyboard). Cast renders the cast sheet.
@@ -21,6 +23,9 @@ export const Root: React.FC = () => {
   const deafFrames = useDeaf3DFrames();
   const deafDuration = deafFrames?.reduce((sum, value) => sum + value, 0) ?? 1;
   const DeafFilm: React.FC = () => <Deaf3DMain frames={deafFrames ?? []} />;
+  const temenFrames = useTemenHilangFrames();
+  const temenDuration = temenFrames?.reduce((sum, value) => sum + value, 0) ?? 1;
+  const TemenFilm: React.FC = () => <TemenHilang3DMain frames={temenFrames ?? []} />;
   return (
     <>
       {EPISODES.map((e) => (
@@ -58,6 +63,16 @@ export const Root: React.FC = () => {
           id="Deaf3D"
           component={DeafFilm}
           durationInFrames={deafDuration}
+          fps={common.fps}
+          width={1080}
+          height={1920}
+        />
+      ) : null}
+      {temenFrames ? (
+        <Composition
+          id="TemenHilang3D"
+          component={TemenFilm}
+          durationInFrames={temenDuration}
           fps={common.fps}
           width={1080}
           height={1920}
