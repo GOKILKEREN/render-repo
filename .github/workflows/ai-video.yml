@@ -1,0 +1,33 @@
+name: ai-video
+
+on:
+  workflow_dispatch:
+
+jobs:
+  render-bulan-hilang:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: mkdir -p out
+      - name: Render HyperFrames composition
+        run: |
+          npx --yes hyperframes@0.8.92 render videos/fabrique/bulan-hilang-setahun/projet \
+            -o out/bulan-hilang-setahun.mp4 \
+            -q delivery \
+            --fps 30 \
+            --quiet \
+            --skill ai-video \
+            --browser-timeout=120 \
+            --protocol-timeout=600000 \
+            --player-ready-timeout=120000 \
+            --low-memory-mode \
+            --workers=1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: video-bulan-hilang
+          path: out/bulan-hilang-setahun.mp4
