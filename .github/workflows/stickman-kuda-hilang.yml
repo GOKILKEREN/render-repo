@@ -20,18 +20,30 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install system tools
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg libegl1 libgl1 libx11-6 libxext6 libxrender1 libfontconfig1
       - name: Install uv
         run: python -m pip install -q uv
       - name: Prepare environments
         run: |
           export PATH="$HOME/.local/bin:$PATH"
           bash scripts/setup.sh all
+      - name: Cache voice and timings
+        id: voice-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            scripts/stickman/kuda-hilang/ep01/voice.wav
+            scripts/stickman/kuda-hilang/ep01/voice.lines.json
+            scripts/stickman/kuda-hilang/ep01/voice.captions.txt
+            scripts/stickman/kuda-hilang/ep01/words.json
+          key: voice-${{ runner.os }}-${{ hashFiles('scripts/stickman/kuda-hilang/ep01/script.txt', 'scripts/stickman/kuda-hilang/cast.json', 'scripts/voice.py', 'scripts/words.py') }}
       - name: Generate narration
+        if: steps.voice-cache.outputs.cache-hit != 'true'
         run: |
           "$TTS_PY" -I scripts/voice.py "$EPISODE/script.txt" "$EPISODE/voice.wav" \
             --takes 2 --max-takes 7 --pace 210
       - name: Generate word timings
+        if: steps.voice-cache.outputs.cache-hit != 'true'
         run: |
           "$TTS_PY" -I scripts/words.py stickman/kuda-hilang/ep01
       - name: Render episode
