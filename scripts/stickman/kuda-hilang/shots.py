@@ -19,6 +19,7 @@ def paper(c, cx, cy, w, h, rot=0.0, color="#F6F1E4"):
     c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(cx - w / 2 + 14, cy - h / 2 + 18, w, h), 8, 8),
                 paint("#000000", 0.28, blur=14))
     shape(c, box(cx - w / 2, cy - h / 2, w, h, 8), color, lw=5)
+    c.restore()
     return cx - w / 2, cy - h / 2
 
 
