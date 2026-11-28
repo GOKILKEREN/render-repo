@@ -1,0 +1,47 @@
+name: stickman-kuda-hilang
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      EPISODE: scripts/stickman/kuda-hilang/ep01
+      ANIM_PY: /home/runner/.cache/stickman-stories/anim/bin/python
+      TTS_PY: /home/runner/.cache/stickman-stories/tts/bin/python
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install system tools
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Install uv
+        run: python -m pip install -q uv
+      - name: Prepare environments
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          bash scripts/setup.sh all
+      - name: Generate narration
+        run: |
+          "$TTS_PY" -I scripts/voice.py "$EPISODE/script.txt" "$EPISODE/voice.wav" \
+            --takes 2 --max-takes 7 --pace 210
+      - name: Generate word timings
+        run: |
+          "$TTS_PY" -I scripts/words.py stickman/kuda-hilang/ep01
+      - name: Render episode
+        run: |
+          mkdir -p out
+          "$ANIM_PY" -I scripts/render.py "$EPISODE" --out out/kuda-hilang.mp4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: video-kuda-hilang
+          path: |
+            out/kuda-hilang.mp4
+            scripts/stickman/kuda-hilang/ep01/voice.lines.json
+            scripts/stickman/kuda-hilang/ep01/words.json
